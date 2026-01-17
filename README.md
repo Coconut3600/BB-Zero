@@ -17,7 +17,7 @@ As BB‑Zero gets older and stops eating glue, I’ll slowly increase the simula
 
 ## Rule Verification and Capture Analysis
 
-Before even thinking about training, I spent a lot of time checking the rules properly. I used combinatorial analysis and custom algorithms to explore every possible capture sequence a king can make — including all the closed paths that end on the same square but eat different pieces.
+Before even thinking about training, I spent a lot of time checking the rules properly. I used combinatorial analysis and custom algorithms to explore every possible capture sequence a promoted piece can make — including all the closed paths that end on the same square but eat different pieces.
 
 I didn’t do this alone. Herson P. Guier helped me a lot. He knows the rules of Spanish checkers inside out, and he’s famous for his work analyzing Profound, the strongest classical checkers engine ever made by the brilliant Álvaro Cardoso.
 
