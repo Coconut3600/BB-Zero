@@ -58,11 +58,6 @@ Creator of BB‑Zero, an experimental AlphaZero‑style engine for Spanish check
 **Herson P. Guier (Costa Rica)**  
 Analyst & Technical Advisor
 
-
-## GUI Preview
-
-Below are screenshots of the current GUI in all three modes of the program:
-
 ## GUI Preview
 
 Below are screenshots of the current GUI:
