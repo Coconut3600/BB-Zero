@@ -74,7 +74,7 @@ Below are screenshots of the current GUI:
 ![Dataset Creation Mode](Screenshot%202026-01-17%20001208.png)
 
 ### Training Mode
-![Training Mode](Training.png)
+![Training Mode](Training_mode.png)
 
 ### Menu Options
 ![Menu Options](Screenshot%202026-01-17%20000354.png)
