@@ -53,7 +53,11 @@ Learn how to train it, watch it grow, and enjoy the journey — whether it becom
 ## Author
 
 **Alberto Cervantes**  
-Creator of BB‑Zero, an experimental AlphaZero-style engine for Spanish checkers.
+Creator of BB‑Zero, an experimental AlphaZero‑style engine for Spanish checkers.
+
+**Herson P. Guier (Costa Rica)**  
+Analyst & Technical Advisor
+
 
 ## GUI Preview
 
