@@ -71,8 +71,10 @@ Below are screenshots of the current GUI:
 ![Gameplay Mode](Screenshot%202026-01-16%20235855.png)
 
 ### Dataset Creation Mode
-![Dataset Creation Mode](Screenshot%202026-01-17%20000354.png)
+![Dataset Creation Mode](Screenshot%202026-01-17%20001208.png)
 
-### Training Mode
-![Training Mode](Screenshot%202026-01-17%20001208.png)
+### Menu Options
+![Menu Options](Screenshot%202026-01-17%20000354.png)
+
+
 
