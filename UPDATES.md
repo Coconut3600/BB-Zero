@@ -1,6 +1,6 @@
 ## January 18, 2026 — Mini-Brain Training Test
 
-Before starting long-term training with the full-size network, I decided to run one final experiment. I recently found a Spanish-checkers project on GitHub that reached a surprisingly good level in only a few hours by training a very small neural network.
+Before starting long-term training with the full-size network, I decided to run one final experiment. I recently found a English-checkers "checkers" project on GitHub that reached a surprisingly good level in only a few hours by training a very small neural network.
 
 Since BB-Zero’s main network is much larger and will take a long time to learn, I created a small-brain version of my engine to test whether my training pipeline is correct. If a tiny network can learn to play well, then I know the architecture, MCTS loop, and training logic are working properly.
 
