@@ -15,6 +15,12 @@ En el futuro, cuando BB‑Zero sea más estable y maduro, planeo liberar el cód
 Agradecimientos especiales a **Herson P. Guier**, mi consultor y experto en reglas, cuyo profundo conocimiento de las damas clásicas ha sido esencial para este proyecto.
 
 **Autor:** Alberto Cervantes  
-*(Aquí colocaré una imagen del proyecto)*
 
 **Palabras clave:** damas españolas, damas clásicas, Spanish checkers, Spanish draughts, AlphaZero, IA, Monte Carlo, aprendizaje por refuerzo, PUCT.
+
+## GUI
+
+Abajo se muestra el GUI:
+
+### Modo de Juego
+![Gameplay Mode](Screenshot%202026-01-16%20235855.png)
