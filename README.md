@@ -15,7 +15,6 @@ In the future, once BB‑Zero becomes more stable and mature, I plan to release 
 Special thanks to **Herson P. Guier**, my consultant and rule expert, whose deep knowledge of Spanish checkers has been essential to this project.
 
 **Author:** Alberto Cervantes  
-*(A project image will be placed here)*
 
 **Keywords:** Spanish checkers, Spanish draughts, classical draughts, Spanish draughts engine, AlphaZero, AI, Monte Carlo, reinforcement learning, PUCT, neural networks.
 
