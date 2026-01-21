@@ -36,7 +36,6 @@ Unlike the reference project, my engine normally uses a **large AlphaZero‑styl
 
 With all these corrections applied, I will repeat the experiment over the next two days to verify whether the engine finally learns as expected. Before these fixes, the playing strength was so low that I could beat it easily, which confirmed that the issue was in the infrastructure, not the architecture. Now that the pipeline is repaired, I will begin a new self‑play run to validate real learning.
 
-Samples
 
 Worker,Result,Moves,Q,π,Backprop,Start,End,Duration
 
