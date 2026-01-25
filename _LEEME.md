@@ -24,5 +24,6 @@ Agradecimientos especiales a **Herson P. Guier**, mi consultor y experto en regl
 
 Abajo se muestra el GUI:
 
-### Modo de Juego
-![Gameplay Mode](Screenshot%202026-01-16%20235855.png)
+### Modo de Juego (Español)
+![Modo de Juego](images/gameplay_es.png)
+
