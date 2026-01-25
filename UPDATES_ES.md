@@ -10,7 +10,7 @@ El plan es ejecutar esta red reducida durante 2–3 días y monitorear todos los
 
 Después de dos días de pruebas, la red reducida (“small‑brain”) no mostró aprendizaje.  
 Compararla con el proyecto de referencia AlphaCheckers‑Zero de MadrasLe  
-(https://github.com/MadrasLe/AlphaCheckers-Zero) ayudó a revelar varios problemas estructurales en mi tubería.  
+(https://github.com/MadrasLe/AlphaCheckers-Zero) ayudó a revelar varios problemas estructurales en mi programa.  
 También doy crédito a MadrasLe por dos ideas que mejoraron significativamente BB‑Zero:  
 el mapeo de política basado en ORIGIN y el uso de una máscara de movimientos legales, que mi programa no incluía originalmente.
 
