@@ -12,13 +12,13 @@ Después de dos días de pruebas, la red reducida (“small‑brain”) no mostr
 Compararla con el proyecto de referencia AlphaCheckers‑Zero de MadrasLe  
 (https://github.com/MadrasLe/AlphaCheckers-Zero) ayudó a revelar varios problemas estructurales en mi programa.  
 También doy crédito a MadrasLe por dos ideas que mejoraron significativamente BB‑Zero:  
-el mapeo de política basado en ORIGIN y el uso de una mapa de casillas habilitadas, que mi programa no incluía originalmente.
+el mapeo de política basado en ORIGIN y el uso de una mapa de movimientos legales, que mi programa no incluía originalmente.
 
 A diferencia de las damas inglesas, las damas españolas son mucho más complejas (cadenas largas de captura, capturas obligatorias estrictas, múltiples casillas de coronación, reglas de tablas de 20 y 12 movimientos, detección completa de repeticiones, repetición ABABAB y un sistema de legalidad mucho más profundo).  
 Esta complejidad requiere más datos de entrenamiento y una red más grande.
 
 Para comparar de manera justa, reduje temporalmente mi red al tamaño del proyecto de referencia.  
-Esto expuso varios problemas, incluyendo propagación de Q‑values, asignación de priors, máscara de movimientos legales, estructura interna del estado h[x] y el mapeo de política ORIGIN.  
+Esto expuso varios problemas, incluyendo propagación de Q‑values, asignación de priors, mapa de movimientos legales, estructura interna del estado h[x] y el mapeo de política ORIGIN.  
 Todos estos problemas ya han sido corregidos.
 
 Debido a que las damas españolas requieren mayor capacidad, regresaré a la red de tamaño completo y la entrenaré con más partidas que el proyecto de referencia.  
