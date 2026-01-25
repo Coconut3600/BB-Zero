@@ -1,11 +1,24 @@
-### MCTS Expansion Strategy
 
-BB‑Zero uses a lightweight MCTS expansion model designed for stable and efficient search.  
-The engine performs full expansion only at the root node, where priors, value estimates, and visit statistics are maintained.  
-During the descent phase, deeper nodes are generated temporarily to guide the simulation, but they are not stored or expanded into a persistent tree structure.  
-This approach reduces branching factor, keeps simulations fast, and maintains consistent behavior across training cycles.
+### MCTS Architecture Summary
 
-The search could be implemented using a deeper expansion model, but the current strategy is intentionally optimized for speed, stability, and predictable learning dynamics.
+BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.  
+The search performs full expansion only at the root node: the root children receive
+neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics
+(W, N, Q). This is the only part of the tree that is stored and updated across all
+simulations.
+
+During the descent phase, deeper nodes are generated temporarily to continue the
+simulation, but they are not stored or expanded into a persistent tree. These nodes
+receive uniform priors and are discarded after each simulation. The neural network is
+evaluated only at the root and at the final leaf of each rollout, which keeps the
+search fast and predictable.
+
+Other MCTS designs expand and store nodes at every depth, evaluating the neural
+network whenever a new leaf is reached and growing a full search tree. BB‑Zero
+intentionally uses a shallower expansion model to reduce branching factor, minimize
+network evaluations, and maintain efficient performance with its 14 MB residual
+network.
+
 
 
 ## January 20, 2026 — Small‑Brain Testing
