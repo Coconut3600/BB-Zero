@@ -1,3 +1,13 @@
+### MCTS Expansion Strategy
+
+BB‑Zero uses a lightweight MCTS expansion model designed for stable and efficient search.  
+The engine performs full expansion only at the root node, where priors, value estimates, and visit statistics are maintained.  
+During the descent phase, deeper nodes are generated temporarily to guide the simulation, but they are not stored or expanded into a persistent tree structure.  
+This approach reduces branching factor, keeps simulations fast, and maintains consistent behavior across training cycles.
+
+The search could be implemented using a deeper expansion model, but the current strategy is intentionally optimized for speed, stability, and predictable learning dynamics.
+
+
 ## January 20, 2026 — Small‑Brain Testing
 
 With the results from the full self‑play game logs and their metrics, I realized that the network was not learning when I configured my program similar to MadrasLe’s setup, using a small neural network like his. That comparison made the issue obvious and helped me identify and fix several errors in my Python implementation.
