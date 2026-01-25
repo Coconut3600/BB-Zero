@@ -24,7 +24,7 @@ BB‑Zero also achieved its first real win against Matilde (an expert‑level Sp
 ## Self‑Play & Training Metrics (24‑Game Window)
 
 ### Cycle 1 → Cycle 4 Trends
-- visited_children: 1–3 → 5–6
+- visited_nodes: 1–3 → 5–6
 - policy_acc: 0.36 → 0.48
 - value_loss: 0.36 → 0.22
 - policy_loss: 1.94 → 1.47
