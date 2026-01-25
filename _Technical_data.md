@@ -19,7 +19,7 @@ After fixing several issues in the training process, I validated the corrections
 
 The test confirmed correct behavior: BB‑Zero is learning.  
 The policy became more structured, MCTS exploration improved, and gameplay showed coherent tactical understanding.  
-BB‑Zero also achieved its first real win against Matilde, converting a positional advantage with a clean tactical sequence (8x15).
+BB‑Zero also achieved its first real win against Matilde (an expert‑level Spanish checkers engine compatible with Martin Fierz’s CheckerBoard)  , converting a positional advantage with a clean tactical sequence (8x15).
 
 ## Self‑Play & Training Metrics (24‑Game Window)
 
