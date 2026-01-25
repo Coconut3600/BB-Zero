@@ -18,10 +18,12 @@ A diferencia de las damas inglesas, las damas españolas son mucho más compleja
 Esta complejidad requiere más datos de entrenamiento y una red más grande.
 
 Para comparar de manera justa, reduje temporalmente mi red al tamaño del proyecto de referencia.  
-Esto expuso varios problemas, incluyendo propagación de Q‑values, asignación de priors, mapa de movimientos legales, estructura interna del estado del juego y el mapeo de política ORIGIN.  
+Esto expuso varios problemas, incluyendo propagación de Q‑values, asignación de priors, mapa de movimientos legales, estructura interna del estado del juego y el mapeo de política basado en el origen.  
 Todos estos problemas ya han sido corregidos.
+
+## 25 de enero de 2026 — Preparación para el Entrenamiento Completo
 
 Debido a que las damas españolas requieren mayor capacidad, regresaré a la red de tamaño completo y la entrenaré con más partidas que el proyecto de referencia.  
 Antes de comenzar el entrenamiento de partidas completas, ejecutaré una última prueba: una sesión de entrenamiento de final de damas‑vs‑damas para verificar estabilidad y comportamiento.
 
-Un nuevo folder, `technical_data/`, almacenará partidas de ejemplo, métricas, registros, notas técnicas e imágenes para documentar la evolución de BB‑Zero conforme la tubería de entrenamiento quede completamente validada.
+Un nuevo folder, `technical_data/`, almacenará partidas de ejemplo, métricas, registros, notas técnicas e imágenes para documentar la evolución de BB‑Zero conforme el proceso de entrenamiento quede completamente validado.
