@@ -13,7 +13,7 @@ w1,-1,Movs: 13-17 31-28 17x26 30x21 11-14 19x10 5x14 21-17 7-12 16x7 4x11 17-13 
 
 ---------
 
-## — January 25, 2026 (Condensed Summary)
+## January 25, 2026 - Testing the corrections
 
 After fixing several issues in the training process, I validated the corrections using a controlled 5‑men vs 2‑men endgame test. The goal was to confirm whether the small‑network configuration (similar to MadrasLe’s setup) was now capable of learning.
 
