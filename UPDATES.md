@@ -16,7 +16,7 @@ To compare fairly, I temporarily reduced my network to match the reference proje
 
 ## January 25, 2026 — Preparation for Full Training
 
-Because Spanish checkers demands more capacity, I will return to the full‑size network and train it with more games than the reference project. Before starting full game training, I will run one final test: a damas‑vs‑damas endgame training session to verify stability and behavior.
+Because Spanish checkers demands more capacity, I will return to the full‑size network and train it with more games than the reference project. Before starting full game training, I will run one final test: a king‑vs‑king endgame training sessionn to verify stability and behavior.
 
 A new folder, `technical_data/`, will store sample games, metrics, logs, technical notes, and images to document BB‑Zero’s evolution as the training process becomes fully validated.
 
