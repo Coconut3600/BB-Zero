@@ -1,6 +1,6 @@
 ## 18 de enero de 2026 — Prueba de Entrenamiento con Mini‑Cerebro
 
-Antes de comenzar el entrenamiento a largo plazo con la red de tamaño completo, creé una versión de “mini‑cerebro” de BB‑Zero para validar toda la tubería de entrenamiento. Un proyecto de referencia en damas inglesas mostró que una red muy pequeña puede aprender rápidamente, así que este experimento ayuda a confirmar si mi arquitectura, el bucle MCTS y la generación del dataset están funcionando correctamente.
+Antes de comenzar el entrenamiento a largo plazo con la red de tamaño completo, creé una versión de “mini‑cerebro” de BB‑Zero para validar todo el sistema de entrenamiento. Un proyecto de referencia en damas inglesas mostró que una red muy pequeña puede aprender rápidamente, así que este experimento ayuda a confirmar si mi arquitectura, el bucle MCTS y la generación del dataset están funcionando correctamente.
 
 El plan es ejecutar esta red reducida durante 2–3 días y monitorear todos los registros y métricas. Si aprende, restauraré la red de tamaño completo para el entrenamiento a largo plazo. Si no aprende, inspeccionaré el código en busca de problemas estructurales.
 
