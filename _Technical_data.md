@@ -1,6 +1,7 @@
 ## January 20, 2026 — Small‑Brain Testing
 
-With the results from the full self‑play game logs and their metrics, I realized that the network was not learning when I tried to configure it the same way MadrasLe does. That contrast helped me identify and fix several errors in my Python program.
+With the results from the full self‑play game logs and their metrics, I realized that the network was not learning when I configured my program similar to MadrasLe’s setup, using a small neural network like his. That comparison made the issue obvious and helped me identify and fix several errors in my Python implementation.
+
 
 Worker,Result,Moves,Q,π,Backprop,Start,End,Duration
 
