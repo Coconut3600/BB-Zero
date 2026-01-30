@@ -35,7 +35,7 @@ La idea del ORIGEN (inspirada en MadrasLe) resultó ser una ventaja enorme. Le d
 
 El objetivo final es ambicioso: enfrentar a Profound, el monstruo absoluto, el “Stockfish” de las damas clásicas. Un motor artesanal, optimizado a mano, escrito en C++, y con décadas de ventaja. Si BB‑Zero logra competir —aunque sea un poco— será un logro enorme. Un verdadero David contra Goliat, hecho con una sola máquina, datasets caseros y pura terquedad científica.
 
-BB‑Zero ya está listo. Ahora comienza el entrenamiento brutal: meses de disciplina, constancia y una persistencia casi obsesiva. No hay atajos, no hay milagros. Solo un slow python program, un cerebro de 15 MB y la voluntad de desafiar a Profound, el gigante de gigantes. Desde este momento, empieza la batalla larga… empieza el entrenamiento sin parar.
+BB‑Zero ya está listo. Ahora comienza el entrenamiento brutal: meses de disciplina, constancia y una persistencia casi obsesiva. No hay atajos, no hay milagros. Solo un lentisimo programa en Python, un cerebro de 15 MB y la voluntad de desafiar a Profound, el gigante de gigantes. Desde este momento, empieza la batalla larga… empieza el entrenamiento sin parar.
 
 ![Profound](https://github.com/Coconut3600/BB-Zero/blob/main/images/Profound.png?raw=true)
 
