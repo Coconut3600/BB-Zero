@@ -25,7 +25,7 @@ Special thanks to **Herson P. Guier**, my consultant and rule expert, whose deep
 
 Below is an screenshots of the current GUI:
 
-### Gameplay Mode (English)
+### Gameplay Mode
 ![Gameplay Mode](images/gameplay_en.png)
 
 
