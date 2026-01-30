@@ -1,7 +1,7 @@
 
 ### MCTS Architecture Summary
 
-BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.  
+BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.
 The search performs full expansion only at the root node: the root children receive
 neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics
 (W, N, Q). This is the only part of the tree that is stored and updated across all
@@ -18,6 +18,13 @@ network whenever a new leaf is reached and growing a full search tree. BB‑Zero
 intentionally uses a shallower expansion model to reduce branching factor, minimize
 network evaluations, and maintain efficient performance with its 14 MB residual
 network.
+
+BB‑Zero’s neural network is implemented in TensorFlow, running inside a WSL2
+(UbuntuCustom) environment on Windows 11, configured to use the CUDA‑accelerated
+GPU cores of an NVIDIA RTX‑4050. This setup allows the engine to perform fast batched
+inference despite being written in Python, providing stable training throughput and
+consistent performance during self‑play cycles.
+
 
 
 
