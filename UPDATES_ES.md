@@ -27,7 +27,7 @@ Un nuevo folder, `technical_data/`, almacenará partidas de ejemplo, métricas, 
 
 ## 30 de enero de 2026 — Preparando a BB‑Zero para lo imposible
 
-Hoy cierro una etapa importante. Probé dos ejemplos controlados de finales para verificar que todo el motor funcionara bajo condiciones reales y lentas. A pesar de que BB‑Zero corre en Python, en una sola computadora, sin la velocidad de un motor en C++, el sistema se comportó sorprendentemente bien. El paralelismo, los batches de inferencia y las funciones optimizadas compensan lo que Python no puede dar. Un slow python program… pero sólido.
+Hoy cierro una etapa importante. Probé dos ejemplos controlados de finales para verificar que todo el motor funcionara bajo condiciones reales y lentas. A pesar de que BB‑Zero corre en Python, en una sola computadora, sin la velocidad de un motor en C++, el sistema se comportó sorprendentemente bien. El paralelismo, los batches de inferencia y las funciones optimizadas compensan lo que Python no puede dar. Un programa lentisimo en Python… pero sólido.
 
 Estos dos finales fueron suficientes para demostrar que el pipeline completo está sano: el MCTS, la red, la generación de datasets y el entrenamiento. Incluso con pocas simulaciones, BB‑Zero aprendió patrones reales. Eso me dio la confianza para diseñar un plan de entrenamiento que pueda sobrevivir a mis limitaciones de hardware.
 
