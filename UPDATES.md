@@ -32,7 +32,8 @@ The final goal is ambitious: to face Profound, the absolute monster, the “Stoc
 
 BB‑Zero is ready. Now begins the brutal training phase: months of discipline, consistency, and almost obsessive persistence. No shortcuts, no miracles. Just a slow python program, a 15 MB brain, and the will to challenge Profound, the giant of giants. From this moment on, the long battle begins… the training starts without stopping.
 
-![Profound](images/profound.png)
+![Profound](https://github.com/Coconut3600/BB-Zero/blob/main/images/Profound.png?raw=true)
+
 
 ## Training Plan (Feb–Jun 2026)
 
