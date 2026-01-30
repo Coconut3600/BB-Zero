@@ -37,6 +37,7 @@ El objetivo final es ambicioso: enfrentar a Profound, el monstruo absoluto, el �
 
 BB‑Zero ya está listo. Ahora comienza el entrenamiento brutal: meses de disciplina, constancia y una persistencia casi obsesiva. No hay atajos, no hay milagros. Solo un slow python program, un cerebro de 15 MB y la voluntad de desafiar a Profound, el gigante de gigantes. Desde este momento, empieza la batalla larga… empieza el entrenamiento sin parar.
 
+![Profound](https://github.com/Coconut3600/BB-Zero/blob/main/images/Profound.png?raw=true)
 
 ## Plan de Entrenamiento (Feb–Jun 2026)
 
