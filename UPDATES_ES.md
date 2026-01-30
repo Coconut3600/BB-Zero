@@ -24,3 +24,48 @@ Debido a que las damas españolas requieren mayor capacidad, regresaré a la red
 Antes de comenzar el entrenamiento de partidas completas, ejecutaré una última prueba: una sesión de entrenamiento de final de damas‑vs‑damas para verificar estabilidad y comportamiento.
 
 Un nuevo folder, `technical_data/`, almacenará partidas de ejemplo, métricas, registros, notas técnicas e imágenes para documentar la evolución de BB‑Zero conforme el proceso de entrenamiento quede completamente validado.
+
+## 30 de enero de 2026 — Preparando a BB‑Zero para lo imposible
+
+Hoy cierro una etapa importante. Probé dos ejemplos controlados de finales para verificar que todo el motor funcionara bajo condiciones reales y lentas. A pesar de que BB‑Zero corre en Python, en una sola computadora, sin la velocidad de un motor en C++, el sistema se comportó sorprendentemente bien. El paralelismo, los batches de inferencia y las funciones optimizadas compensan lo que Python no puede dar. Un slow python program… pero sólido.
+
+Estos dos finales fueron suficientes para demostrar que el pipeline completo está sano: el MCTS, la red, la generación de datasets y el entrenamiento. Incluso con pocas simulaciones, BB‑Zero aprendió patrones reales. Eso me dio la confianza para diseñar un plan de entrenamiento que pueda sobrevivir a mis limitaciones de hardware.
+
+La idea del ORIGEN (inspirada en MadrasLe) resultó ser una ventaja enorme. Le da estructura al árbol y contexto a las jugadas, algo que la red sola no puede ver en damas españolas. Y con un cerebro convolucional de 15 MB, BB‑Zero tiene espacio para aprender maniobras largas, finales complejos y estilo propio.
+
+El objetivo final es ambicioso: enfrentar a Profound, el monstruo absoluto, el “Stockfish” de las damas clásicas. Un motor artesanal, optimizado a mano, escrito en C++, y con décadas de ventaja. Si BB‑Zero logra competir —aunque sea un poco— será un logro enorme. Un verdadero David contra Goliat, hecho con una sola máquina, datasets caseros y pura terquedad científica.
+
+BB‑Zero ya está listo. Ahora comienza el entrenamiento brutal: meses de disciplina, constancia y una persistencia casi obsesiva. No hay atajos, no hay milagros. Solo un slow python program, un cerebro de 15 MB y la voluntad de desafiar a Profound, el gigante de gigantes. Desde este momento, empieza la batalla larga… empieza el entrenamiento sin parar.
+
+
+## Plan de Entrenamiento (Feb–Jun 2026)
+
+**Febrero 2026**  
+• 40 simulaciones por jugada  
+• 200,000 partidas de autojuego  
+• Entrenar cada 10,000 partidas  
+• Objetivo: intuición global y reconocimiento de patrones básicos
+
+**Marzo 2026**  
+• 80 simulaciones por jugada  
+• 100,000 partidas de autojuego  
+• Entrenar cada 5,000 partidas  
+• Objetivo: refinar estructuras defensivas y estabilizar el juego
+
+**Abril 2026**  
+• 800 simulaciones por jugada  
+• 10,000 partidas de autojuego  
+• Entrenar cada 500 partidas  
+• Objetivo: precisión táctica, cálculo profundo y finales complejos
+
+**Mayo 2026**  
+• 1,600 simulaciones por jugada  
+• 5,000 partidas de autojuego  
+• Entrenar cada 250 partidas  
+• Objetivo: pulido final, consolidación de estilo y preparación para torneo
+
+**Junio 2026**  
+• Evaluación final  
+• Match completo: **BB‑Zero vs. Profound**  
+• Objetivo: medir la verdadera fuerza del motor después de meses de entrenamiento
+
