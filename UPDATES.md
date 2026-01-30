@@ -30,7 +30,7 @@ The ORIGIN idea (inspired by MadrasLe) turned out to be a huge advantage. It giv
 
 The final goal is ambitious: to face Profound, the absolute monster, the “Stockfish” of Spanish checkers. A handcrafted C++ engine with decades of tuning and raw speed. If BB‑Zero can compete — even a little — it will be a massive achievement. A true David vs. Goliath moment, built with one computer, homemade datasets, and stubborn scientific determination.
 
-BB‑Zero is ready. Now begins the brutal training phase: months of discipline, consistency, and almost obsessive persistence. No shortcuts, no miracles. Just a slow machine, a 15 MB brain, and the will to challenge Profound, the giant of giants. From this moment on, the long battle begins… the training starts without stopping.
+BB‑Zero is ready. Now begins the brutal training phase: months of discipline, consistency, and almost obsessive persistence. No shortcuts, no miracles. Just a slow python program, a 15 MB brain, and the will to challenge Profound, the giant of giants. From this moment on, the long battle begins… the training starts without stopping.
 
 
 ## Training Plan (Feb–Jun 2026)
