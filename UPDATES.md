@@ -66,4 +66,18 @@ BB‑Zero is ready. Now begins the brutal training phase: months of discipline, 
 • Full match: **BB‑Zero vs. Profound**  
 • Goal: measure the true strength of the engine after months of training
 
+## February 5, 2026 — Training
+
+BB‑Zero has now reached its fourth training cycle. I haven’t tested games against the brains from cycle 2 or cycle 3 yet, but I did play several games against the brain produced in cycle 1.
+
+In the first test that brain beat me, although I was tired and didn’t play well. The next day I tried again, this time with 80 simulations, and managed to get a draw, but it was difficult. Today I faced the same cycle‑1 brain again, also at 80 simulations, trying to play as well as I could… and it beat me again. I’m sharing the photo and the full game below.
+
+![BB-Zero vs me](https://github.com/Coconut3600/BB-Zero/blob/main/images/bb_zero_vs_me.jpg?raw=true)
+
+I also talked with my consultant Herson, and we might soon play a game on the PlayOK platform to offer some friendly matches with BB‑Zero for fans of the game. His page is an excellent resource on American Checkers: it documents the best programs, computer‑vs‑computer matches, and games against grandmasters: https://damasclasicas.blogspot.com/
+
+**Game played (0–1):**  
+1.11-15, 21-18; 2.15-19, 22x15; 3.12x19, 23x14; 4.10x19, 27-23; 5.06-10, 23x14; 6.10x19, 31-27; 7.05-10, 27-23; 8.02-05, 23x14; 9.10x19, 25-21; 10.05-10, 28-23; 11.19x28, 32x23; 12.07-11, 23-19; 13.08-12, 26-22; 14.12-16, 21-17; 15.04-08, 30-27; 16.08-12, 29-26; 17.11-15, 27-23; 18.16-20, 23x16x07; 19.03x12, 26-21; 20.12-16, 19x12; 21.01-05, 22-19; 22.09-13, 18x09x02; 23.10-13, 17x10; 24.16-20, 24x15; 0–1
+
+
 
