@@ -20,7 +20,7 @@
 9) **Final de la Forzosa:** se da en el final de 3 damas contra 1 dama, siempre que una de las 3 damas esté en la diagonal principal. Debe ganarse en un máximo de 12 jugadas completas (blancas y negras). A diferencia de la regla 8, aquí la cuenta no se reinicia aunque haya capturas. Si se supera el límite de 12 jugadas, la partida se declara empate.
 
 
-## CLASSIC CHECKERS — RULE CLARIFICATIONS  
+## SPANISH CHECKERS — RULE CLARIFICATIONS  
 **Author: Herson P. Guier (Costa Rica) (Translation)**
 
 1) The game is played on an 8×8 board, just like chess. Each player starts with twelve men: white versus black. White always moves first. The main diagonal must be on the right. The game may be played on light or dark squares, though light squares are preferred.
