@@ -70,3 +70,15 @@ BB‑Zero ya está listo. Ahora comienza el entrenamiento brutal: meses de disci
 • Match completo: **BB‑Zero vs. Profound**  
 • Objetivo: medir la verdadera fuerza del motor después de meses de entrenamiento
 
+## 5 de febrero de 2026 — Entrenamiento
+
+BB‑Zero ya alcanzó su cuarto ciclo de entrenamiento. Aún no he probado jugar contra los cerebros del ciclo 2 ni del ciclo 3, pero sí jugué varias partidas contra el cerebro generado en el ciclo 1.
+
+En la primera prueba ese cerebro me ganó una partida, aunque yo estaba cansado y no jugué bien. Al día siguiente jugué otra vez, esta vez con 80 simulaciones, y logré empatar, pero con mucha dificultad. Hoy volví a enfrentarme al mismo cerebro del primer entrenamiento, también a 80 simulaciones, tratando de jugar lo mejor posible… y volvió a ganarme. Comparto la foto y la partida completa.
+
+![BB-Zero vs yo](https://github.com/Coconut3600/BB-Zero/blob/main/images/bb_zero_vs_me.jpg?raw=true)
+
+Estuve platicando con mi consultante Herson, y quizá pronto juguemos una partida en la plataforma PlayOK, para ofrecer algunos juegos amistosos con BB‑Zero a los aficionados. Su página es una referencia excelente sobre Damas Clásicas: documenta los mejores programas, partidas computadora vs computadora y enfrentamientos contra grandes maestros: https://damasclasicas.blogspot.com/
+
+**Partida jugada (0–1):**  
+1.11-15, 21-18; 2.15-19, 22x15; 3.12x19, 23x14; 4.10x19, 27-23; 5.06-10, 23x14; 6.10x19, 31-27; 7.05-10, 27-23; 8.02-05, 23x14; 9.10x19, 25-21; 10.05-10, 28-23; 11.19x28, 32x23; 12.07-11, 23-19; 13.08-12, 26-22; 14.12-16, 21-17; 15.04-08, 30-27; 16.08-12, 29-26; 17.11-15, 27-23; 18.16-20, 23x16x07; 19.03x12, 26-21; 20.12-16, 19x12; 21.01-05, 22-19; 22.09-13, 18x09x02; 23.10-13, 17x10; 24.16-20, 24x15; 0–1
