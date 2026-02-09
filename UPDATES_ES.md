@@ -116,7 +116,7 @@ Nota: 9-31 es correcto; 24-20 pierde.
 
 ---
 
-### Partida completa vs Matilde
+### Partida contra Matilde
 
 1.10-13, 21-17; 2.13-18, 22x13; 3.09x18, 26-21; 4.12-15, 21x14;
 5.11x18, 29-26; 6.05-10, 23-20; 7.07-11, 28-23; 8.10-14, 17-13;
@@ -127,6 +127,6 @@ Nota: 9-31 es correcto; 24-20 pierde.
 25.07-12, 16x07; 26.04x11x18, 10-05; 27.18-21, 27-23; 28.29-12, 23-19;
 29.12x22, 05-01; 30.21-26, 01-05; 31.26-30, 05-09; 32.22-08
 
-### BBzero vs Matilde
+### Matilde vs BB-Zero(Negro)
 
 ![bbzero_matilde](https://github.com/Coconut3600/BB-Zero/blob/main/images/bbzero_matilde.png)
