@@ -131,7 +131,7 @@ Note: 9-31 is correct; 24-20 loses.
 25.07-12, 16x07; 26.04x11x18, 10-05; 27.18-21, 27-23; 28.29-12, 23-19;
 29.12x22, 05-01; 30.21-26, 01-05; 31.26-30, 05-09; 32.22-08
 
-### Matilde vs BB-Zero
+### Matilde vs BB-Zero (Black)
 
 ![bbzero_matilde](https://github.com/Coconut3600/BB-Zero/blob/main/images/bbzero_matilde.png)
 
