@@ -123,6 +123,56 @@ Nota: 9-31 es correcto; 24-20 pierde.
 25.07-12, 16x07; 26.04x11x18, 10-05; 27.18-21, 27-23; 28.29-12, 23-19;
 29.12x22, 05-01; 30.21-26, 01-05; 31.26-30, 05-09; 32.22-08
 
+### 🗓️ 2026‑02‑08 — Cycle 4: crisis, learning, and new direction
+
+I’m not an AI engineer; I’m learning as I go. I’m also not a strong Spanish checkers player, which is why I use *Matilde* (a medium/expert engine) as my reference. In this cycle BB‑Zero started giving away pieces, almost like it was getting frustrated when it couldn’t beat me. I thought I had damaged the neural network with overtraining.
+
+To verify, I increased simulations to 300 and tested BB‑Zero against Matilde. Surprisingly, it reached a drawn endgame, but eventually lost because it doesn’t know how to maintain the king in technical endings. This confirmed the real issue: the brain isn’t broken — **it simply doesn’t understand endgames**.
+
+Without endgame patterns, the engine:
+- mis-evaluates positions  
+- falls into traps  
+- fails to convert winning positions  
+- and would need millions of self‑play games to learn these concepts naturally
+
+So I’m pausing general training and creating a **curriculum of endgames** — small “vitamins” for the artificial brain. I’ll train key endings (king handling, draw techniques, traps, races) with symmetry and color inversion. After generating these datasets, I’ll mix them with normal self‑play and resume long‑term training for several months.
+
+---
+
+### Engine state in the critical position
+
+Current state — 100% completed  
+Turn: 2  
+─────────────────────  
+Best move: 24-20  
+Q = -0.077  
+Visits = 5000  
+π = 0.595  
+NN value = -0.089  
+Visited nodes: 9 / 9  
+
+Top‑5 policy:  
+• 24-20 → 0.595  
+• 9-18 → 0.231  
+• 9-31 → 0.062  
+• 9-13 → 0.06  
+• 9-2 → 0.035  
+
+Note: 9-31 is correct; 24-20 loses.
+
+---
+
+### Full game vs Matilde
+
+1.10-13, 21-17; 2.13-18, 22x13; 3.09x18, 26-21; 4.12-15, 21x14;
+5.11x18, 29-26; 6.05-10, 23-20; 7.07-11, 28-23; 8.10-14, 17-13;
+9.01-05, 13-09; 10.05-10, 27-22; 11.18x27, 31x22; 12.10-13, 26-21;
+13.03-07, 21-17; 14.06-10, 09-05; 15.02x09, 20-16; 16.08-12, 25-21;
+17.13-18, 22x13x06; 18.14-19, 23x14; 19.11x18x25, 06-02; 20.15-19, 30-27;
+21.25-29, 02-05; 22.12-15, 05x23; 23.09-13, 17x10; 24.15-19, 23x14;
+25.07-12, 16x07; 26.04x11x18, 10-05; 27.18-21, 27-23; 28.29-12, 23-19;
+29.12x22, 05-01; 30.21-26, 01-05; 31.26-30, 05-09; 32.22-08
+
 
 
 
