@@ -83,7 +83,7 @@ Estuve platicando con mi consultante Herson, y quizá pronto juguemos una partid
 **Partida jugada (0–1):**  
 1.11-15, 21-18; 2.15-19, 22x15; 3.12x19, 23x14; 4.10x19, 27-23; 5.06-10, 23x14; 6.10x19, 31-27; 7.05-10, 27-23; 8.02-05, 23x14; 9.10x19, 25-21; 10.05-10, 28-23; 11.19x28, 32x23; 12.07-11, 23-19; 13.08-12, 26-22; 14.12-16, 21-17; 15.04-08, 30-27; 16.08-12, 29-26; 17.11-15, 27-23; 18.16-20, 23x16x07; 19.03x12, 26-21; 20.12-16, 19x12; 21.01-05, 22-19; 22.09-13, 18x09x02; 23.10-13, 17x10; 24.16-20, 24x15; 0–1
 
-###  2026‑02‑08 — Ciclo 4: crisis, aprendizaje y nuevo rumbo
+##  8 de febrero de 2026 — Ciclo 4: crisis, aprendizaje y nuevo rumbo
 
 No soy ingeniero en IA; estoy aprendiendo. Tampoco soy buen jugador de damas clásicas españolas, por eso uso a *Matilde* como referencia. En este ciclo BB‑Zero empezó a regalar piezas, como si se frustrara al no poder ganarme, y pensé que había dañado el cerebro por sobreentrenamiento.
 
