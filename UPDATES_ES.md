@@ -82,3 +82,47 @@ Estuve platicando con mi consultante Herson, y quizá pronto juguemos una partid
 
 **Partida jugada (0–1):**  
 1.11-15, 21-18; 2.15-19, 22x15; 3.12x19, 23x14; 4.10x19, 27-23; 5.06-10, 23x14; 6.10x19, 31-27; 7.05-10, 27-23; 8.02-05, 23x14; 9.10x19, 25-21; 10.05-10, 28-23; 11.19x28, 32x23; 12.07-11, 23-19; 13.08-12, 26-22; 14.12-16, 21-17; 15.04-08, 30-27; 16.08-12, 29-26; 17.11-15, 27-23; 18.16-20, 23x16x07; 19.03x12, 26-21; 20.12-16, 19x12; 21.01-05, 22-19; 22.09-13, 18x09x02; 23.10-13, 17x10; 24.16-20, 24x15; 0–1
+
+###  2026‑02‑08 — Ciclo 4: crisis, aprendizaje y nuevo rumbo
+
+No soy ingeniero en IA; estoy aprendiendo. Tampoco soy buen jugador de damas clásicas españolas, por eso uso a *Matilde* como referencia. En este ciclo BB‑Zero empezó a regalar piezas, como si se frustrara al no poder ganarme, y pensé que había dañado el cerebro por sobreentrenamiento.
+
+Para comprobarlo subí las simulaciones a 300 y lo enfrenté a Matilde. Para mi sorpresa llegó a un final empatado, pero terminó perdiendo porque no sabe mantener la dama. Esto confirmó que el problema real no es el cerebro: **son los finales**. Sin patrones de finales, el motor evalúa mal, cae en trampas y necesita millones de partidas para aprender algo que puedo enseñarle directamente.
+
+Decidí pausar el entrenamiento general y crear un **curriculum de finales**: pequeñas “vitaminas” para el cerebro artificial. Entrenaré posiciones clave (manejo de dama, finales de tablas, persecuciones, trampas típicas) con simetrías y cambios de color. Luego mezclaré estos datasets con el self‑play normal y reanudaré el entrenamiento continuo por varios meses.
+
+---
+
+### Estado del motor en la posición crítica
+
+Current state — 100% completed  
+Turn: 2  
+─────────────────────  
+Best move: 24-20  
+Q = -0.077  
+Visits = 5000  
+π = 0.595  
+NN value = -0.089  
+Visited nodes: 9 / 9  
+
+Top‑5 policy:  
+• 24-20 → 0.595  
+• 9-18 → 0.231  
+• 9-31 → 0.062  
+• 9-13 → 0.06  
+• 9-2 → 0.035  
+
+Nota: 9-31 es correcto; 24-20 pierde.
+
+---
+
+### Partida completa vs Matilde
+
+1.10-13, 21-17; 2.13-18, 22x13; 3.09x18, 26-21; 4.12-15, 21x14;
+5.11x18, 29-26; 6.05-10, 23-20; 7.07-11, 28-23; 8.10-14, 17-13;
+9.01-05, 13-09; 10.05-10, 27-22; 11.18x27, 31x22; 12.10-13, 26-21;
+13.03-07, 21-17; 14.06-10, 09-05; 15.02x09, 20-16; 16.08-12, 25-21;
+17.13-18, 22x13x06; 18.14-19, 23x14; 19.11x18x25, 06-02; 20.15-19, 30-27;
+21.25-29, 02-05; 22.12-15, 05x23; 23.09-13, 17x10; 24.15-19, 23x14;
+25.07-12, 16x07; 26.04x11x18, 10-05; 27.18-21, 27-23; 28.29-12, 23-19;
+29.12x22, 05-01; 30.21-26, 01-05; 31.26-30, 05-09; 32.22-08
