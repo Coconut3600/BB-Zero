@@ -81,7 +81,7 @@ I also talked with my consultant Herson, and we might soon play a game on the Pl
 
 
 
-###  2026‑02‑08 — Cycle 4: crisis, learning, and new direction
+## February 8, 2026 — Cycle 4: crisis, learning, and new direction
 
 I’m not an AI engineer; I’m learning as I go. I’m also not a strong Spanish checkers player, which is why I use *Matilde* (a medium/expert engine) as my reference. In this cycle BB‑Zero started giving away pieces, almost like it was getting frustrated when it couldn’t beat me. I thought I had damaged the neural network with overtraining.
 
