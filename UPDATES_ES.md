@@ -91,30 +91,6 @@ Para comprobarlo subí las simulaciones a 300 y lo enfrenté a Matilde. Para mi 
 
 Decidí pausar el entrenamiento general y crear un **curriculum de finales**: pequeñas “vitaminas” para el cerebro artificial. Entrenaré posiciones clave (manejo de dama, finales de tablas, persecuciones, trampas típicas) con simetrías y cambios de color. Luego mezclaré estos datasets con el self‑play normal y reanudaré el entrenamiento continuo por varios meses.
 
----
-
-### Estado del motor en la posición crítica
-
-Current state — 100% completed  
-Turn: 2  
-─────────────────────  
-Best move: 24-20  
-Q = -0.077  
-Visits = 5000  
-π = 0.595  
-NN value = -0.089  
-Visited nodes: 9 / 9  
-
-Top‑5 policy:  
-• 24-20 → 0.595  
-• 9-18 → 0.231  
-• 9-31 → 0.062  
-• 9-13 → 0.06  
-• 9-2 → 0.035  
-
-Nota: 9-31 es correcto; 24-20 pierde.
-
----
 
 ### Partida contra Matilde
 
@@ -130,3 +106,5 @@ Nota: 9-31 es correcto; 24-20 pierde.
 ### Matilde vs BB-Zero(Negro)
 
 ![bbzero_matilde](https://github.com/Coconut3600/BB-Zero/blob/main/images/bbzero_matilde.png)
+
+Nota: Tras 32.22-08, la jugada 09-18 es perdedora. La jugada correcta es 9-31
