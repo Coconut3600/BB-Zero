@@ -95,30 +95,6 @@ Without endgame patterns, the engine:
 
 So I’m pausing general training and creating a **curriculum of endgames** — small “vitamins” for the artificial brain. I’ll train key endings (king handling, draw techniques, traps, races) with symmetry and color inversion. After generating these datasets, I’ll mix them with normal self‑play and resume long‑term training for several months.
 
----
-
-### Engine state in the critical position
-
-Current state — 100% completed  
-Turn: 2  
-─────────────────────  
-Best move: 24-20  
-Q = -0.077  
-Visits = 5000  
-π = 0.595  
-NN value = -0.089  
-Visited nodes: 9 / 9  
-
-Top‑5 policy:  
-• 24-20 → 0.595  
-• 9-18 → 0.231  
-• 9-31 → 0.062  
-• 9-13 → 0.06  
-• 9-2 → 0.035  
-
-Note: 9-31 is correct; 24-20 loses.
-
----
 
 ### Game -
 
@@ -134,6 +110,8 @@ Note: 9-31 is correct; 24-20 loses.
 ### Matilde vs BB-Zero (Black)
 
 ![bbzero_matilde](https://github.com/Coconut3600/BB-Zero/blob/main/images/bbzero_matilde.png)
+
+Note: 32.22-08, 09-18 loses.  It should be 9-31.
 
 
 
