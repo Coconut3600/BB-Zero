@@ -114,4 +114,15 @@ So I’m pausing general training and creating a **curriculum of endgames** — 
 Note: 32.22-08, 09-18 loses.  It should be 9-31.
 
 
+## February 12, 2026 — New Training Direction & Horizontal Mirror Symmetries
+
+After experimenting with endgame datasets, I realized that curriculum learning was destabilizing the brain. Forcing endings or adding artificial examples created rigidity and inconsistent behavior, while the last 40,000 self‑play games showed that BB‑Zero learns much better through stability, discipline, and natural intuition. Some endgames are already being handled correctly without ever being taught, which confirms that the brain is learning on its own. Because of this, I am stopping the creation of endgame datasets for now. Even though I lost almost a week that could have been used to generate more data, implementing the horizontal mirror (symmetries) is a major breakthrough that more than compensates for that time. The mirror is applied directly in Keras/TensorFlow, takes no extra time, and instantly duplicates the effective training volume.
+
+From today forward, training will continue with a simple and stable plan: fixed 40 simulations per move, cycles of 10,000 self‑play games, the horizontal mirror fully enabled, and the origin+mask architecture to keep the action space clean. This will be a long‑term experiment over the next four months to see whether consistency, patience, and intuition can shape BB‑Zero into an expert‑level Spanish Checkers engine capable of drawing and eventually defeating strong programs.
+
+I also finished a small video showcasing the BB‑Zero GUI, and I’m sharing it here to document the project’s progress: https://www.youtube.com/watch?v=9LgB3CJ3WV4
+
+
+
+
 
