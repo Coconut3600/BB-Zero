@@ -109,6 +109,8 @@ Decidí pausar el entrenamiento general y crear un **curriculum de finales**: pe
 
 Nota: Tras 32.22-08, la jugada 09-18 es perdedora. La jugada correcta es 9-31
 
+
+
 ## 12 de febrero de 2026 — Nueva Dirección de Entrenamiento y Simetrías con Espejo Horizontal
 
 Después de experimentar con conjuntos de datos de finales, me di cuenta de que el curriculum learning estaba desestabilizando el cerebro. Forzar finales o agregar ejemplos artificiales generaba rigidez y comportamientos inconsistentes, mientras que las últimas 40,000 partidas de autojuego mostraron que BB‑Zero aprende mucho mejor mediante estabilidad, disciplina e intuición natural. Algunos finales ya están siendo manejados correctamente sin haber sido enseñados explícitamente, lo que confirma que el cerebro está aprendiendo por sí mismo. Por esta razón, detengo la creación de conjuntos de datos de finales por ahora. Aunque perdí casi una semana que podría haberse usado para generar más datos, implementar el espejo horizontal (simetrías) es un gran avance que compensa con creces ese tiempo. El espejo se aplica directamente en Keras/TensorFlow, no consume tiempo adicional y duplica instantáneamente el volumen efectivo de entrenamiento.
