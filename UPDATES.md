@@ -114,6 +114,7 @@ So I’m pausing general training and creating a **curriculum of endgames** — 
 Note: 32.22-08, 09-18 loses.  It should be 9-31.
 
 
+
 ## February 12, 2026 — New Training Direction & Horizontal Mirror Symmetries
 
 After experimenting with endgame datasets, I realized that curriculum learning was destabilizing the brain. Forcing endings or adding artificial examples created rigidity and inconsistent behavior, while the last 40,000 self‑play games showed that BB‑Zero learns much better through stability, discipline, and natural intuition. Some endgames are already being handled correctly without ever being taught, which confirms that the brain is learning on its own. Because of this, I am stopping the creation of endgame datasets for now. Even though I lost almost a week that could have been used to generate more data, implementing the horizontal mirror (symmetries) is a major breakthrough that more than compensates for that time. The mirror is applied directly in Keras/TensorFlow, takes no extra time, and instantly duplicates the effective training volume.
