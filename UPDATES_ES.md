@@ -108,3 +108,12 @@ Decidí pausar el entrenamiento general y crear un **curriculum de finales**: pe
 ![bbzero_matilde](https://github.com/Coconut3600/BB-Zero/blob/main/images/bbzero_matilde.png)
 
 Nota: Tras 32.22-08, la jugada 09-18 es perdedora. La jugada correcta es 9-31
+
+## 12 de febrero de 2026 — Nueva Dirección de Entrenamiento y Simetrías con Espejo Horizontal
+
+Después de experimentar con conjuntos de datos de finales, me di cuenta de que el curriculum learning estaba desestabilizando el cerebro. Forzar finales o agregar ejemplos artificiales generaba rigidez y comportamientos inconsistentes, mientras que las últimas 40,000 partidas de autojuego mostraron que BB‑Zero aprende mucho mejor mediante estabilidad, disciplina e intuición natural. Algunos finales ya están siendo manejados correctamente sin haber sido enseñados explícitamente, lo que confirma que el cerebro está aprendiendo por sí mismo. Por esta razón, detengo la creación de conjuntos de datos de finales por ahora. Aunque perdí casi una semana que podría haberse usado para generar más datos, implementar el espejo horizontal (simetrías) es un gran avance que compensa con creces ese tiempo. El espejo se aplica directamente en Keras/TensorFlow, no consume tiempo adicional y duplica instantáneamente el volumen efectivo de entrenamiento.
+
+A partir de hoy, el entrenamiento continuará con un plan simple y estable: 40 simulaciones por movimiento, ciclos de 10,000 partidas de autojuego, el espejo horizontal completamente habilitado y la arquitectura de origen+mask para mantener limpio el espacio de acciones. Este será un experimento a largo plazo durante los próximos cuatro meses para ver si la consistencia, la paciencia y la intuición pueden convertir a BB‑Zero en un motor experto de damas clásicas capaz de empatar y eventualmente derrotar a programas fuertes.
+
+También terminé un pequeño video mostrando la GUI de BB‑Zero, y lo comparto aquí para documentar el progreso del proyecto: https://www.youtube.com/watch?v=9LgB3CJ3WV4
+
