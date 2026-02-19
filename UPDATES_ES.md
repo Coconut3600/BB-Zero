@@ -119,3 +119,96 @@ A partir de hoy, el entrenamiento continuará con un plan simple y estable: 40 s
 
 También terminé un pequeño video mostrando la GUI de BB‑Zero, y lo comparto aquí para documentar el progreso del proyecto: https://www.youtube.com/watch?v=9LgB3CJ3WV4
 
+## 18 de febrero de 2026 — Ciclo 7: estabilidad, simetrías y el comienzo del aprendizaje real
+
+Después de una semana intensa de entrenamiento continuo, BB‑Zero acaba de completar su séptimo ciclo, alcanzando 70,000 partidas de autojuego a 40 simulaciones por movimiento. Este ciclo marca un punto importante en el proyecto: por primera vez, las métricas muestran una mejora clara y consistente, señal de que el cerebro está empezando a aprender patrones reales de juego.
+
+### El impacto del espejo horizontal
+
+En el ciclo 5 habilité por completo el espejo horizontal, una simetría aplicada directamente en Keras/TensorFlow que duplica cada posición del dataset sin costo adicional de tiempo.  
+Esto significa que:
+
+• Aunque cada ciclo genera 10,000 partidas reales  
+• El entrenamiento recibe el equivalente a 20,000 posiciones gracias al espejo  
+
+En el ciclo 5 esto introdujo ruido, algo totalmente esperado: la red tuvo que reorganizarse para integrar la nueva simetría.  
+Pero ahora, en los ciclos 6 y 7, ese ruido se transformó en estabilidad y mejor generalización.
+
+### Ciclo 7: el mejor ciclo hasta ahora
+
+Las métricas del ciclo 7 muestran la primera señal sólida de aprendizaje:
+
+• total_loss bajó a 1.6887  
+• policy_loss bajó a 1.5088  
+• value_loss bajó a 0.1844  
+• ratio subió a 8.18 (más estabilidad interna)
+
+Estas mejoras indican:
+
+• Una política más coherente  
+• Un value más estable y preciso  
+• Menos ruido interno  
+• Mejor entendimiento de quién está ganando o perdiendo en posiciones típicas  
+
+Es, sin duda, el ciclo más fuerte del proyecto hasta la fecha.
+
+### Corrección importante: medir progreso contra Matilde, no contra mí
+
+En una actualización anterior mencioné que BB‑Zero me había ganado una partida.  
+Eso fue un error de interpretación: yo soy un jugador muy débil de damas clásicas españolas, así que usarme como referencia no tiene ningún valor científico.
+
+A partir de ahora, la única métrica válida será enfrentar a BB‑Zero contra “Matilde”, el motor de nivel medio incluido en Checkersboard.  
+Matilde es un rival estable, consistente y perfecto para medir progreso real.
+
+### Nuevo protocolo de evaluación
+
+A partir de este viernes comenzaré un ritual semanal:
+
+**Cada viernes: match de 3 rondas (cambiando colores) contra Matilde.**
+
+Publicaré:
+
+• Las partidas completas  
+• Comentarios  
+• Errores típicos  
+• Señales de mejora o retroceso  
+
+El objetivo es observar si BB‑Zero sigue recibiendo palizas o si empieza a mostrar resistencia.
+
+### Plan de entrenamiento continuo
+
+El entrenamiento seguirá con la misma disciplina:
+
+• 40 simulaciones por movimiento  
+• Entrenamiento cada 10,000 partidas  
+• Espejo horizontal activado  
+• Origen + máscara legal para mantener limpio el espacio de acciones  
+
+Cuando BB‑Zero logre:
+
+• Empatar consistentemente partidas completas contra Matilde  
+• O conseguir su primera victoria real  
+
+Entonces subiré el entrenamiento a 60 simulaciones por movimiento.
+
+### Un bebé que empieza a caminar
+
+Me emocioné cuando BB‑Zero me ganó una partida y cuando casi empata contra Matilde.  
+Pero la realidad es que aún es un bebé: comete errores graves, pierde finales simples y todavía no entiende cómo manejar una dama.
+
+Aun así, este ciclo 7 demuestra que:
+
+• La constancia  
+• La disciplina  
+• La estabilidad  
+• Y la paciencia  
+
+son suficientes para que un motor pequeño, hecho en Python y entrenado en una sola computadora, empiece a aprender de verdad.
+
+El objetivo final sigue intacto: desafiar a Profound, el gigante absoluto de las damas clásicas.
+
+Falta muchísimo, pero por primera vez, el camino se ve claro.
+
+Este viernes publicaremos un enfrentamiento a 3 rounds cambiando color contra Matilde para ver si sigue recibiendo palizas.
+
+
