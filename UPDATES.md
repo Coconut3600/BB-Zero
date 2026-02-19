@@ -125,5 +125,98 @@ I also finished a small video showcasing the BB‑Zero GUI, and I’m sharing it
 
 
 
+## February 18, 2026 — Cycle 7: stability, symmetries, and the beginning of real learning
+
+After an intense week of continuous training, BB‑Zero has completed its seventh cycle, reaching 70,000 self‑play games at 40 simulations per move. This cycle marks an important moment in the project: for the first time, the metrics show a clear and consistent improvement, a sign that the brain is beginning to learn real patterns of play.
+
+### The impact of the horizontal mirror
+
+In Cycle 5 I fully enabled the horizontal mirror, a symmetry applied directly in Keras/TensorFlow that duplicates every training position at zero additional cost.  
+This means:
+
+• Even though each cycle generates 10,000 real games  
+• The training pipeline receives the equivalent of 20,000 positions thanks to the mirror  
+
+Cycle 5 introduced noise — completely expected — because the network had to reorganize itself to integrate the new symmetry.  
+But now, in Cycles 6 and 7, that noise has transformed into stability and better generalization.
+
+### Cycle 7: the best cycle so far
+
+Cycle 7 shows the first solid signs of real learning:
+
+• total_loss dropped to 1.6887  
+• policy_loss dropped to 1.5088  
+• value_loss dropped to 0.1844  
+• ratio increased to 8.18 (greater internal stability)
+
+These improvements indicate:
+
+• A more coherent policy  
+• A more stable and accurate value head  
+• Less internal noise  
+• A better understanding of who is winning or losing in typical positions  
+
+Without a doubt, this is the strongest cycle in the project so far.
+
+### Important correction: measuring progress against Matilde, not against myself
+
+In a previous update I mentioned that BB‑Zero had beaten me in a game.  
+That was a misinterpretation: I am a very weak Spanish Checkers player, so using myself as a reference has no scientific value.
+
+From now on, the only valid benchmark will be matches against **Matilde**, the medium‑strength engine included in Checkersboard.  
+Matilde is stable, consistent, and perfect for measuring real progress.
+
+### New evaluation protocol
+
+Starting this Friday, I will begin a weekly ritual:
+
+**Every Friday: a 3‑round match (switching colors) against Matilde.**
+
+I will publish:
+
+• The full games  
+• Comments  
+• Typical mistakes  
+• Signs of improvement or regression  
+
+The goal is to observe whether BB‑Zero continues to get crushed or if it begins to show resistance.
+
+### Continuous training plan
+
+Training will continue with the same discipline:
+
+• 40 simulations per move  
+• Training every 10,000 games  
+• Horizontal mirror enabled  
+• Origin encoding + legal mask to keep the action space clean  
+
+When BB‑Zero manages to:
+
+• Consistently draw full games against Matilde  
+• Or achieve its first real victory  
+
+Then I will increase training to **60 simulations per move**.
+
+### A baby taking its first steps
+
+I got excited when BB‑Zero beat me and when it almost drew against Matilde.  
+But the truth is that it is still a baby: it makes serious mistakes, loses simple endings, and still doesn’t understand how to handle a king properly.
+
+Even so, Cycle 7 shows that:
+
+• Consistency  
+• Discipline  
+• Stability  
+• And patience  
+
+are enough for a small engine, written in Python and trained on a single computer, to begin learning for real.
+
+The final goal remains unchanged: to challenge **Profound**, the absolute giant of Spanish Checkers.
+
+There is still a long road ahead, but for the first time, the path looks clear.
+
+This Friday we will publish a 3‑round match (switching colors) against Matilde to see whether BB‑Zero continues to take a beating.
+
+
 
 
