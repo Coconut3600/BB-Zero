@@ -46,6 +46,9 @@ The long‑term objective remains unchanged: to eventually challenge **Profound*
 
 ![Profound](https://github.com/Coconut3600/BB-Zero/blob/main/images/Profound.png?raw=true)
 
+As BB‑Zero continues to improve, I will publish a full BB‑Zero vs. Matilde game to document its progress, along with a video for Spanish Checkers enthusiasts. After the engine eventually manages to defeat Matilde, I will also make it available for live games on PlayOK so fans of the game can play against it directly.
+
+
 
 
 
