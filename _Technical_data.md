@@ -1,29 +1,20 @@
 
 ### MCTS Architecture Summary
 
-BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.
-The search performs full expansion only at the root node: the root children receive
-neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics
-(W, N, Q). This is the only part of the tree that is stored and updated across all
-simulations.
+BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.  
+The search performs full expansion only at the root node: the root children receive neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics (W, N, Q). This is the only part of the tree that is stored and updated across all simulations.
 
-During the descent phase, deeper nodes are generated temporarily to continue the
-simulation, but they are not stored or expanded into a persistent tree. These nodes
-receive uniform priors and are discarded after each simulation. The neural network is
-evaluated only at the root and at the final leaf of each rollout, which keeps the
-search fast and predictable.
+During the descent phase, deeper nodes are generated temporarily to continue the simulation, but they are not stored or expanded into a persistent tree. These nodes receive uniform priors and are discarded after each simulation. The neural network is evaluated only at the root and at the final leaf of each rollout, which keeps the search fast and predictable.
 
-Other MCTS designs expand and store nodes at every depth, evaluating the neural
-network whenever a new leaf is reached and growing a full search tree. BB‑Zero
-intentionally uses a shallower expansion model to reduce branching factor, minimize
-network evaluations, and maintain efficient performance with its 14 MB residual
-network.
+Other MCTS designs expand and store nodes at every depth, evaluating the neural network whenever a new leaf is reached and growing a full search tree. BB‑Zero intentionally uses a shallower expansion model to reduce branching factor, minimize network evaluations, and maintain efficient performance with its 14 MB residual network.
 
-BB‑Zero’s neural network is implemented in TensorFlow, running inside a WSL2
-(UbuntuCustom) environment on Windows 11, configured to use the CUDA‑accelerated
-GPU cores of an NVIDIA RTX‑4050. This setup allows the engine to perform fast batched
-inference despite being written in Python, providing stable training throughput and
-consistent performance during self‑play cycles.
+BB‑Zero’s neural network is implemented in TensorFlow, running inside a WSL2 (UbuntuCustom) environment on Windows 11, configured to use the CUDA‑accelerated GPU cores of an NVIDIA RTX‑4050. This setup allows the engine to perform fast batched inference despite being written in Python, providing stable training throughput and consistent performance during self‑play cycles.
+
+To prevent **catastrophic forgetting**, BB‑Zero uses a modified sliding‑window training strategy.  
+Instead of keeping a large historical buffer, the system retains only **the most recent 20% of self‑play data**.  
+For example, when training with 12,000 games, only the latest 2,000 are preserved.  
+All samples are fully shuffled before being fed into the ResNet, ensuring diversity while maintaining recency‑based stability.
+
 
 
 
