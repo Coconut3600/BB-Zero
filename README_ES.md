@@ -11,8 +11,7 @@ BB‑Zero incluye tres modos integrados:
 - Modo Generación de Dataset  
 - Modo Entrenamiento  
 
-Cuando el motor alcance un nivel estable y maduro tras miles de partidas de entrenamiento, el código completo será publicado para que otros puedan estudiarlo, reproducirlo o construir sobre él.
-
+Al finalizar el entrenamiento, BB‑Zero será liberado como un ejecutable para Windows (~10 MB) acompañado de su red neuronal *La_Marioneta* (~15 MB) para que cualquiera pueda jugarlo.
 
 Agradecimientos especiales a **Herson P. Guier**, mi consultor y experto en reglas, cuyo profundo conocimiento de las damas clásicas ha sido esencial para este proyecto.
 
