@@ -1,34 +1,54 @@
 #!/usr/bin/env bash
-#review xpartida = GAMES_PER_MOVE x WORKERS
 set -euo pipefail
 
 PROJECT_DIR="/mnt/c/python"
 PYFILE="brain1.py"
 
-OUTER_LOOPS=200       
-GAMES_PER_WORKER=6   #partidas 
-SIMS=40               
-WORKERS=8             
+WORKERS=14
+SIMS=40
+GAMES_PER_WORKER=4
+LOOPS=179   # 56 × 179 ≈ 10,000 partidas
 
 cd "$PROJECT_DIR"
 
-echo "[INFO] Initializing training..."
-echo "[INFO] $OUTER_LOOPS episodes | $GAMES_PER_WORKER partidas | $SIMS simulations"
+CYCLE=1
 
-for ((episode=1; episode<=OUTER_LOOPS; episode++)); do
-  echo "=============================="
-  echo "[EPISODE $episode/$OUTER_LOOPS]"
+while true; do
+    START=$(date +%s)
 
-  # Self-play con workers
-  python3 "$PYFILE" $WORKERS $SIMS $GAMES_PER_WORKER
+    echo "=============================================="
+    echo "[CICLO $CYCLE] Generando ~10,000 partidas..."
+    echo "=============================================="
 
-  # training (1 epoch)
-  python3 "$PYFILE" 0
+    for ((i=1; i<=LOOPS; i++)); do
+        echo "[CICLO $CYCLE] [LOOP $i/$LOOPS] Ejecutando $WORKERS workers..."
+        python3 "$PYFILE" $WORKERS $SIMS $GAMES_PER_WORKER
+    done
 
-  echo "[EPISODE $episode] Complete."
+    echo "[CICLO $CYCLE] Entrenando..."
+
+    # Fecha actual
+    FECHA=$(date '+%Y-%m-%d %H:%M:%S')
+
+    # Encabezado en training.txt
+    echo "===== CICLO $CYCLE | $FECHA =====" >> training.txt
+
+    # Entrenamiento (append)
+    python3 "$PYFILE" 0 | tee -a training.txt
+
+    # Calcular duración del ciclo
+    END=$(date +%s)
+    DURACION=$((END - START))
+    H=$((DURACION / 3600))
+    M=$(((DURACION % 3600) / 60))
+    S=$((DURACION % 60))
+
+    echo "Duración del ciclo: ${H}h ${M}m ${S}s" >> training.txt
+    echo "" >> training.txt
+
+    echo "[CICLO $CYCLE] COMPLETADO. Duración: ${H}h ${M}m ${S}s"
+    echo "Esperando 5 segundos antes del siguiente ciclo..."
+    sleep 5
+
+    CYCLE=$((CYCLE + 1))
 done
-
-echo "=============================="
-echo "[DONE] Training completed."
-
-#arena  python3 "$PYFILE" -2 
