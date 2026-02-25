@@ -45,3 +45,6 @@ A partir de aquí, BB‑Zero seguirá un plan estable:
 El objetivo final se mantiene: desafiar a **Profound**, el motor más fuerte de damas españolas.
 
 ![Profound](https://github.com/Coconut3600/BB-Zero/blob/main/images/Profound.png?raw=true)
+
+A medida que BB‑Zero continúe mejorando, publicaré una partida completa de BB‑Zero vs. Matilde para documentar su progreso, junto con un video para los aficionados a las damas clásicas. Después de que el motor logre finalmente vencer a Matilde, también estará disponible para jugar partidas en vivo en PlayOK, de modo que la comunidad pueda enfrentarse directamente a él.
+
