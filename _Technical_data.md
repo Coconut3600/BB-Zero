@@ -19,8 +19,11 @@ In BB‑Zero, depth does not mean the same as in a traditional minimax engine.
 It is not a “search tree depth” used to calculate long variations.
 
 Instead:
-Depth is a safety limit that prevents BB‑Zero from getting stuck in overly long simulations or endless loops.
 
+**Depth** is a safety limit that prevents BB‑Zero from getting stuck in overly long simulations or endless loops. Originally set to 65, it was later modified after cycle 10 to improve endgame performance.
+
+
+![Depth](images/depth.png)
 
 
 
