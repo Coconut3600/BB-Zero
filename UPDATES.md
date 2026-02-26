@@ -1,11 +1,10 @@
 ## January 18 – February 12, 2026 — Summary
 
-Between January 18 and February 12, I validated the full BB‑Zero training pipeline using a reduced “mini‑brain” network. This test revealed several structural issues, which were corrected by comparing with [**AlphaCheckers‑Zero by MadrasLe (https://github.com/MadrasLe/AlphaCheckers-Zero)
-. After fixing the pipeline, I returned to the full‑size network, since Spanish checkers requires higher complexity.
+Between January 18 and February 12, I validated the full BB‑Zero training pipeline using a reduced “mini‑brain” network. This test revealed several structural issues, which were corrected by comparing with [**AlphaCheckers‑Zero by MadrasLe**](https://github.com/MadrasLe/AlphaCheckers-Zero). After fixing the pipeline, I returned to the full‑size network, since Spanish checkers requires higher complexity.
 
 Controlled endgame experiments confirmed that MCTS, dataset generation, and neural training are functioning correctly.The **ORIGIN-based policy mapping** and **legal‑moves mask**—ideas credited to MadrasLe—remain essential.
 
-Although I am a very weak Spanish checkers player, BB‑Zero already defeats me consistently (image below). However, it still cannot beat **Matilde**, a stable medium‑strength engine documented on   , which will remain the primary benchmark.
+Although I am a very weak Spanish checkers player, BB‑Zero already defeats me consistently (image below). However, it still cannot beat **Matilde**, a stable medium‑strength engine documented on  [**Spanish Checkers Programs by Herson P. Guier**](https://damasclasicas.blogspot.com/), which will remain the primary benchmark.
 
 ![BB-Zero vs me](https://github.com/Coconut3600/BB-Zero/blob/main/images/bb_zero_vs_me.jpg?raw=true)
 
