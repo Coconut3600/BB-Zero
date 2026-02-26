@@ -15,7 +15,7 @@ Instead of keeping a large historical buffer, the system retains only **the most
 For example, when training with 12,000 games, only the latest 2,000 are preserved.  
 All samples are fully shuffled before being fed into the ResNet, ensuring diversity while maintaining recency‑based stability.
 
-In BB‑Zero, depth does not mean the same as in a traditional minimax engine.
+In BB‑Zero, **depth** does not mean the same as in a traditional minimax engine.
 It is not a “search tree depth” used to calculate long variations.
 
 Instead:
