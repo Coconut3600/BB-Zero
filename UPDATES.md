@@ -4,9 +4,7 @@ Between January 18 and February 12, I validated the full BB‑Zero training pipe
 
 Controlled endgame experiments confirmed that MCTS, dataset generation, and neural training are functioning correctly.The **ORIGIN-based policy mapping** and **legal‑moves mask**—ideas credited to MadrasLe—remain essential.
 
-Although I am a very weak Spanish checkers player, BB‑Zero already defeats me consistently (image below). However, it still cannot beat **Matilde**, a stable medium‑strength engine documented on 
-
-https://damasclasicas.blogspot.com/   , which will remain the primary benchmark.
+Although I am a very weak Spanish checkers player, BB‑Zero already defeats me consistently (image below). However, it still cannot beat **Matilde**, a stable medium‑strength engine documented on https://damasclasicas.blogspot.com/   , which will remain the primary benchmark.
 
 ![BB-Zero vs me](https://github.com/Coconut3600/BB-Zero/blob/main/images/bb_zero_vs_me.jpg?raw=true)
 
