@@ -1,8 +1,6 @@
 ## 18 de enero – 12 de febrero de 2026 — Resumen
 
-Entre el 18 de enero y el 12 de febrero validé todo el pipeline de entrenamiento de BB‑Zero utilizando una versión reducida del modelo (“mini‑brain”).  
-Esta prueba reveló varios problemas estructurales que fueron corregidos comparando con **AlphaCheckers‑Zero de MadrasLe**.  
-Una vez corregido el pipeline, regresé al modelo completo, ya que las damas españolas requieren mayor complejidad.
+Entre el 18 de enero y el 12 de febrero validé todo el pipeline de entrenamiento de BB‑Zero utilizando una versión reducida del modelo (“mini‑brain”). Esta prueba reveló varios problemas estructurales que fueron corregidos comparando con [**AlphaCheckers‑Zero de MadrasLe**](https://github.com/MadrasLe/AlphaCheckers-Zero). Una vez corregido el pipeline, regresé al modelo completo, ya que las damas españolas requieren mayor complejidad.
 
 Las pruebas de finales confirmaron que MCTS, la generación de datos y el entrenamiento neuronal funcionan correctamente.  
 Las ideas de **ORIGIN** y **legal‑moves mask**, tomadas de MadrasLe, siguen siendo componentes esenciales.
