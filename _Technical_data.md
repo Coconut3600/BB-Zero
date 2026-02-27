@@ -1,31 +1,25 @@
 
 ### MCTS Architecture Summary
 
-BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning.  
-The search performs full expansion only at the root node: the root children receive neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics (W, N, Q). This is the only part of the tree that is stored and updated across all simulations.
+BB‑Zero uses a lightweight MCTS architecture optimized for speed and stable learning. The search performs full expansion only at the root node: the root children receive neural‑network priors, value estimates, Dirichlet noise, and complete MCTS statistics (W, N, Q). This is the only part of the tree that is stored and updated across all simulations.
 
 During the descent phase, deeper nodes are generated temporarily to continue the simulation, but they are not stored or expanded into a persistent tree. These nodes receive uniform priors and are discarded after each simulation. The neural network is evaluated only at the root and at the final leaf of each rollout, which keeps the search fast and predictable.
 
-Other MCTS designs expand and store nodes at every depth, evaluating the neural network whenever a new leaf is reached and growing a full search tree. BB‑Zero intentionally uses a shallower expansion model to reduce branching factor, minimize network evaluations, and maintain efficient performance with its 14 MB residual network.
-
+Other MCTS designs expand and store nodes at every depth, evaluating the neural network whenever a new leaf is reached and growing a full search tree. BB‑Zero intentionally uses a shallower expansion model to reduce branching factor, minimize network evaluations, and maintain efficient performance with its 14 MB residual network. Although BB‑Zero does not build a persistent search tree like a full AlphaZero implementation, it compensates by using a transposition table (TT) that stores statistics per position (N, W, Q, and priors), allowing the engine to reuse information across simulations and partially emulate the behavior of a persistent tree despite its resource constraints.
+ 
 BB‑Zero’s neural network is implemented in TensorFlow, running inside a WSL2 (UbuntuCustom) environment on Windows 11, configured to use the CUDA‑accelerated GPU cores of an NVIDIA RTX‑4050. This setup allows the engine to perform fast batched inference despite being written in Python, providing stable training throughput and consistent performance during self‑play cycles.
 
-To prevent **catastrophic forgetting**, BB‑Zero uses a modified sliding‑window training strategy.  
-Instead of keeping a large historical buffer, the system retains only **the most recent 20% of self‑play data**.  
-For example, when training with 12,000 games, only the latest 2,000 are preserved.  
-All samples are fully shuffled before being fed into the ResNet, ensuring diversity while maintaining recency‑based stability.
+To prevent **catastrophic forgetting**, BB‑Zero uses a modified sliding‑window training strategy. Instead of keeping a large historical buffer, the system retains only **the most recent 20% of self‑play data**. For example, when training with 12,000 games, only the latest 2,000 are preserved. All samples are fully shuffled before being fed into the ResNet, ensuring diversity while maintaining recency‑based stability.
 
-In BB‑Zero, **depth** does not mean the same as in a traditional minimax engine.
-It is not a “search tree depth” used to calculate long variations.
+In BB‑Zero, **depth** does not mean the same as in a traditional minimax engine. It is not a “search tree depth” used to calculate long variations.
 
 Instead:
-
 **Depth** is a safety limit that prevents BB‑Zero from getting stuck in overly long simulations or endless loops. Originally set to 65, it was later modified after cycle 10 to improve endgame performance.
 
 
 ![Depth](images/depth.png)
 
-
+An additional issue was identified regarding data diversity. The horizontal mirror symmetry used during training did not remove or discard examples, but it did reduce the effective diversity of the dataset. When only ~10% of the generated self‑play games were truly unique, the mirrored positions doubled the dataset size without increasing the number of unique states, amplifying redundancy. This effect became more severe because the training pipeline was also limited to a maximum window of 50,000 examples, discovered on 02/26/2026. As a result, many positions were truncated, and the remaining ones contained high symmetry-induced redundancy. This problem has now been corrected: BB‑Zero supports a maximum window of up to 1,000,000 unique examples, ensuring that all generated diversity is preserved and preventing additional loss of information.
 
 
 
