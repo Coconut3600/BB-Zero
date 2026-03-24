@@ -11,7 +11,7 @@ BB‑Zero includes three integrated modes:
 - Dataset Creation Mode  
 - Training Mode  
 
-Once training is completed, BB‑Zero will be released as a Windows executable (~10 MB) together with its neural network *La_Marioneta* (~15 MB), allowing anyone to play with it.
+Once training is completed, BB‑Zero will be released as a Windows executable (~180 MB) together with its neural network *La_Marioneta* (~15 MB), allowing anyone to play with it.
 
 Special thanks to **Herson P. Guier**, my consultant and rule expert, whose deep knowledge of Spanish checkers has been essential to this project.
 
