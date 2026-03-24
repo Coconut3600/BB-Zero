@@ -24,7 +24,8 @@ In March 2026, I discovered several mistakes in my original AlphaZero implementa
 
 ## GUI Video
 
-A short demonstration of the BB‑Zero GUI is available here:  
+A short demonstration of the BB‑Zero GUI is available here: (Please note: the neural network shown here has not been trained correctly yet.)
+
 https://www.youtube.com/watch?v=9LgB3CJ3WV4
 
 ---
@@ -46,7 +47,7 @@ Special thanks to **Herson P. Guier**, my consultant and rule expert, whose deep
 
 ## GUI Preview
 
-Below is a screenshot of the current GUI:
+Below is a screenshot of the current GUI: (Please note: the neural network shown here has not been trained correctly yet.)
 
 ### Gameplay Mode
 ![Gameplay Mode](images/gameplay_en2.png)
