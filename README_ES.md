@@ -18,7 +18,8 @@ https://github.com/MadrasLe/AlphaCheckers-Zero
 
 Solo se usaron ideas conceptuales (ORIGIN y MASK). **No se utiliza ningún código externo de AlphaCheckers‑Zero en BB‑Zero.**
 
-En marzo de 2026 descubrí varios errores en mi implementación original de AlphaZero — problemas causados por mi propia mala interpretación de cómo funciona realmente el algoritmo. Después de corregir estos errores, desarrollé una nueva idea que mejora el árbol persistente de DeepMind: un enfoque más eficiente, que evita la estructura clásica de árbol y prácticamente no usa RAM. Si te interesa este concepto, está documentado aquí en GitHub en **technical_data**.
+En marzo de 2026 descubrí varios errores en mi implementación original de AlphaZero — problemas causados por mi propia mala interpretación de cómo funciona realmente el algoritmo. Después de corregir estos errores, desarrollé una nueva idea que mejora el árbol persistente de DeepMind: un enfoque más eficiente, que evita la estructura clásica de árbol y prácticamente no usa RAM. Si te interesa este concepto, está documentado aquí en GitHub en **technical_data** (próximamente / coming soon).
+
 
 ---
 
