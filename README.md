@@ -16,7 +16,7 @@ The project is estimated to be completed around **May 2026**.
 Between January 18 and February 12, I validated the full BB‑Zero training pipeline using a reduced “mini‑brain” network. This test revealed several structural issues, which were corrected by comparing with **AlphaCheckers‑Zero by MadrasLe**:  
 https://github.com/MadrasLe/AlphaCheckers-Zero
 
-Only conceptual ideas were used (ORIGIN and MASK). **No external code from AlphaCheckers‑Zero is included in BB‑Zero.**
+Only one conceptual idea was used (MASK). **No external code from AlphaCheckers‑Zero is included in BB‑Zero.**
 
 In March 2026, I discovered several mistakes in my original AlphaZero implementation — issues caused by my own misunderstanding of how the algorithm truly works. After correcting these errors, I developed a new idea that improves on DeepMind’s persistent tree: a more efficient approach that avoids the classical tree structure and uses almost no RAM. If you are interested in this concept, it is documented here on GitHub under **technical_data** (coming soon).
 
