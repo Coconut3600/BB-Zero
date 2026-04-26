@@ -7,7 +7,7 @@ The engine is written 100% in Python as a single .py file and is compatible with
 My long‑term goal is clear: **to challenge and eventually defeat Profound**, one of the strongest Spanish checkers engines documented on **Herson P. Guier’s Spanish Checkers Programs** page:  
 https://damasclasicas.blogspot.com/
 
-The project is estimated to be completed around **May 2026**.
+The project is estimated to be completed around **June 2026**.
 
 ---
 
