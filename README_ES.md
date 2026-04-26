@@ -7,7 +7,7 @@ El motor está escrito 100% en Python dentro de un solo archivo .py y es compati
 Mi objetivo a largo plazo es claro: **desafiar y eventualmente derrotar a Profound**, uno de los motores más fuertes de damas españolas documentado en la página **Programas de Damas Clásicas de Herson P. Guier**:  
 https://damasclasicas.blogspot.com/
 
-Se estima que el proyecto estará terminado alrededor de **mayo de 2026**.
+Se estima que el proyecto estará terminado alrededor de **junio de 2026**.
 
 ---
 
