@@ -13,12 +13,9 @@ Se estima que el proyecto estará terminado alrededor de **junio de 2026**.
 
 ## Estado Actual
 
-Entre el 18 de enero y el 12 de febrero validé todo el pipeline de entrenamiento de BB‑Zero usando una red reducida (“mini‑brain”). Esta prueba reveló varios problemas estructurales, los cuales corregí comparando con **AlphaCheckers‑Zero de MadrasLe**:  
-https://github.com/MadrasLe/AlphaCheckers-Zero
+Durante los primeros meses de 2026 validé todo el pipeline de entrenamiento de BB‑Zero utilizando una red reducida tipo “mini‑brain”. Este proceso reveló varios problemas estructurales en mi implementación original de AlphaZero. El más importante fue descubierto en abril: un error en la forma en que manejaba el origin plane dentro del tensor de política. Ese fallo distorsionaba los objetivos de π y dañaba silenciosamente el entrenamiento. Después de identificarlo, reconstruí por completo la lógica de generación de la política y corregí el manejo del plano de origen. Con esta corrección, el pipeline de entrenamiento se estabilizó y los datos de self‑play se volvieron consistentes.
 
-Solo se uso una idea conceptual (MASK). **No se utiliza ningún código externo de AlphaCheckers‑Zero en BB‑Zero.**
-
-En marzo de 2026 descubrí varios errores en mi implementación original de AlphaZero — problemas causados por mi propia mala interpretación de cómo funciona realmente el algoritmo. Después de corregir estos errores, desarrollé una nueva idea que mejora el árbol persistente de DeepMind: un enfoque más eficiente, que evita la estructura clásica de árbol y prácticamente no usa RAM. Si te interesa este concepto, está documentado aquí en GitHub en **technical_data** (próximamente / coming soon).
+Durante la misma refactorización también desarrollé un nuevo enfoque de búsqueda persistente, inspirado en la idea de los árboles persistentes de DeepMind, pero sin depender de una estructura clásica de árbol. Este diseño será documentado próximamente en la sección technical_data.
 
 
 ---
