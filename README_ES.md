@@ -13,9 +13,14 @@ Se estima que el proyecto estará terminado alrededor de **junio de 2026**.
 
 ## Estado Actual
 
-Durante los primeros meses de 2026 validé todo el pipeline de entrenamiento de BB‑Zero utilizando una red reducida tipo “mini‑brain”. Este proceso reveló varios problemas estructurales en mi implementación original de AlphaZero. El más importante fue descubierto en abril: un error en la forma en que manejaba el origin plane dentro del tensor de política. Ese fallo distorsionaba los objetivos de π y dañaba silenciosamente el entrenamiento. Después de identificarlo, reconstruí por completo la lógica de generación de la política y corregí el manejo del plano de origen. Con esta corrección, el pipeline de entrenamiento se estabilizó y los datos de self‑play se volvieron consistentes.
+Durante la primera mitad de 2026 continué refinando y validando todo el pipeline de entrenamiento de BB‑Zero. En junio identifiqué y corregí dos problemas críticos que habían afectado silenciosamente la calidad de los datos de self‑play: una operación de shuffle defectuosa que desalineaba los ejemplos de entrenamiento, y un conjunto de estadísticas heredadas (N/W/Q) que seguían siendo leídas desde un motor antiguo en lugar de la nueva estructura. Ambos problemas quedaron completamente resueltos el 18 de junio.
 
-Durante la misma refactorización también desarrollé un nuevo enfoque de búsqueda persistente, inspirado en la idea de los árboles persistentes de DeepMind, pero sin depender de una estructura clásica de árbol. Este diseño será documentado próximamente en la sección technical_data.
+Con estas correcciones, BB‑Zero ahora produce datos de self‑play limpios, objetivos de política consistentes y un comportamiento de entrenamiento estable. Este sábado reiniciaré el entrenamiento desde cero, utilizando una ventana deslizante de 20,000 partidas, 600 simulaciones por movimiento y un esquema continuo donde cada 180 partidas nuevas reemplazan a las 180 más antiguas. Este enfoque se usará durante el resto de junio para reconstruir un conjunto de datos saludable y permitir que la red converja correctamente.
+
+En paralelo, desarrollé una estructura similar al árbol persistente de AlphaZero, pero significativamente más rápida y eficiente en memoria. Esta arquitectura ya está completamente integrada en el motor.
+
+A finales de junio, cuando la nueva red haya ganado fuerza, realizaré una serie de partidas de evaluación contra Matilde de Checkersboard para medir el progreso.
+
 
 
 ---
