@@ -13,9 +13,14 @@ The project is estimated to be completed around **June 2026**.
 
 ## Current Status
 
-During the early months of 2026, I validated the full BB‑Zero training pipeline using a reduced “mini‑brain” network. This process revealed several structural issues in my original AlphaZero implementation. The most important one was discovered in April: a mistake in how I handled the origin plane inside the policy tensor. This bug distorted the π targets and silently damaged the training process. After identifying the issue, I rebuilt the policy‑generation logic and fully corrected the origin‑plane handling. With this fix in place, the training pipeline stabilized and the self‑play data became consistent.
+During the early months of 2026, I continued refining and validating the full BB‑Zero training pipeline. In June, I identified and corrected two critical issues that had silently affected the quality of self‑play data: a faulty shuffle operation that misaligned training examples, and a legacy set of statistics (N/W/Q) that were still being read from an older engine instead of the new structure. Both issues were fully resolved on June 18.
 
-During the same refactor, I also developed a new memory‑efficient approach inspired by the idea of persistent search trees, but without relying on a classical tree structure. This design will be documented under technical_data soon.
+With these fixes in place, BB‑Zero now produces clean self‑play data, consistent policy targets, and stable training behavior. I will restart training from scratch this Saturday, using a 20,000‑game sliding window, 600 simulations per move, and a continuous schedule where every 180 new games replace the oldest 180. This setup will be used throughout the remainder of June to rebuild a healthy dataset and allow the network to converge properly.
+
+In parallel, I have developed a structure similar to AlphaZero’s persistent tree, but significantly faster and more memory‑efficient. This design is now fully integrated into the engine.
+
+By the end of June, once the new network has gained strength, I will run a series of evaluation matches against Matilde from Checkersboard to measure progress.
+
 
 ---
 
