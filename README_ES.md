@@ -15,11 +15,11 @@ Se estima que el proyecto estará terminado alrededor de **junio de 2026**.
 
 Durante la primera mitad de 2026 continué refinando y validando todo el pipeline de entrenamiento de BB‑Zero. En junio identifiqué y corregí dos problemas críticos que habían afectado silenciosamente la calidad de los datos de self‑play: una operación de shuffle defectuosa que desalineaba los ejemplos de entrenamiento, y un conjunto de estadísticas heredadas (N/W/Q) que seguían siendo leídas desde un motor antiguo en lugar de la nueva estructura. Ambos problemas quedaron completamente resueltos el 18 de junio.
 
-Con estas correcciones, BB‑Zero ahora produce datos de self‑play limpios, objetivos de política consistentes y un comportamiento de entrenamiento estable. Este sábado reiniciaré el entrenamiento desde cero, utilizando una ventana deslizante de 20,000 partidas, 600 simulaciones por movimiento y un esquema continuo donde cada 180 partidas nuevas reemplazan a las 180 más antiguas. Este enfoque se usará durante el resto de junio para reconstruir un conjunto de datos saludable y permitir que la red converja correctamente.
+Con estas correcciones, BB‑Zero ahora produce datos de self‑play limpios, objetivos de política consistentes y un comportamiento de entrenamiento estable. El entrenamiento continuará desde el punto actual (aproximadamente 30,000 partidas), utilizando ahora una ventana deslizante de 50,000 partidas y 800 simulaciones por movimiento. Debido a recursos computacionales limitados y al ritmo de aprendizaje actual del motor, este esquema se mantendrá durante aproximadamente seis meses —hasta enero de 2027— para acumular el volumen de partidas necesario para lograr mejoras significativas.
 
 En paralelo, desarrollé una estructura similar al árbol persistente de AlphaZero, pero significativamente más rápida y eficiente en memoria. Esta arquitectura ya está completamente integrada en el motor.
 
-A finales de junio, cuando la nueva red haya ganado fuerza, realizaré una serie de partidas de evaluación contra Matilde de Checkersboard para medir el progreso.
+Cuando la nueva red haya alcanzado suficiente fuerza, realizaré una serie de partidas de evaluación contra Matilde de Checkersboard para medir el progreso.
 
 
 
