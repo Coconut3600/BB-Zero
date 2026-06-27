@@ -13,15 +13,13 @@ Se estima que el proyecto estará terminado alrededor de **junio de 2026**.
 
 ## Estado Actual
 
-Durante la primera mitad de 2026 continué refinando y validando todo el pipeline de entrenamiento de BB‑Zero. En junio identifiqué y corregí dos problemas críticos que habían afectado silenciosamente la calidad de los datos de self‑play: una operación de shuffle defectuosa que desalineaba los ejemplos de entrenamiento, y un conjunto de estadísticas heredadas (N/W/Q) que seguían siendo leídas desde un motor antiguo en lugar de la nueva estructura. Ambos problemas quedaron completamente resueltos el 18 de junio.
+Durante la primera mitad de 2026 continué refinando y validando todo el pipeline de entrenamiento de BB‑Zero. En junio resolví dos problemas críticos que habían afectado silenciosamente la calidad de los datos de self‑play: una operación de shuffle defectuosa que desalineaba los ejemplos de entrenamiento, y un conjunto de estadísticas heredadas (N/W/Q) que seguían siendo leídas desde un motor antiguo en lugar de la nueva estructura. Ambos problemas quedaron completamente resueltos el 18 de junio.
 
 Con estas correcciones, BB‑Zero ahora produce datos de self‑play limpios, objetivos de política consistentes y un comportamiento de entrenamiento estable. El entrenamiento continuará desde el punto actual (aproximadamente 30,000 partidas), utilizando ahora una ventana deslizante de 50,000 partidas y 800 simulaciones por movimiento. Debido a recursos computacionales limitados y al ritmo de aprendizaje actual del motor, este esquema se mantendrá durante aproximadamente seis meses —hasta enero de 2027— para acumular el volumen de partidas necesario para lograr mejoras significativas.
 
 En paralelo, desarrollé una estructura similar al árbol persistente de AlphaZero, pero significativamente más rápida y eficiente en memoria. Esta arquitectura ya está completamente integrada en el motor.
 
 Cuando la nueva red haya alcanzado suficiente fuerza, realizaré una serie de partidas de evaluación contra Matilde de Checkersboard para medir el progreso.
-
-
 
 ---
 
