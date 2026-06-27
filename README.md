@@ -13,14 +13,13 @@ The project is estimated to be completed around **June 2026**.
 
 ## Current Status
 
-During the early months of 2026, I continued refining and validating the full BB‑Zero training pipeline. In June, I identified and corrected two critical issues that had silently affected the quality of self‑play data: a faulty shuffle operation that misaligned training examples, and a legacy set of statistics (N/W/Q) that were still being read from an older engine instead of the new structure. Both issues were fully resolved on June 18.
+During early 2026, I continued refining and validating the full BB‑Zero training pipeline. In June, I resolved two silent but critical issues affecting self‑play quality: a faulty shuffle operation that misaligned training examples, and legacy N/W/Q statistics still being read from an older engine instead of the new structure. Both issues were fully fixed on June 18.
 
-With these fixes in place, BB‑Zero now produces clean self‑play data, consistent policy targets, and stable training behavior. I will restart training from scratch this Saturday, using a 20,000‑game sliding window, 600 simulations per move, and a continuous schedule where every 180 new games replace the oldest 180. This setup will be used throughout the remainder of June to rebuild a healthy dataset and allow the network to converge properly.
+With these corrections in place, BB‑Zero now produces clean self‑play data, consistent policy targets, and stable training behavior. Training will continue from the current point (approximately 30,000 self‑play games), now using a 50,000‑game sliding window and 800 simulations per move. Due to limited computational resources and the engine’s current slow learning rate, this long‑term schedule will run for roughly six months — until January 2027 — to accumulate the volume of games required for meaningful improvement.
 
-In parallel, I have developed a structure similar to AlphaZero’s persistent tree, but significantly faster and more memory‑efficient. This design is now fully integrated into the engine.
+In parallel, I have developed a structure similar to AlphaZero’s persistent tree but significantly faster and more memory‑efficient, and it is now fully integrated into the engine.
 
-By the end of June, once the new network has gained strength, I will run a series of evaluation matches against Matilde from Checkersboard to measure progress.
-
+Once the new network reaches sufficient strength, I will run evaluation matches against Matilde from Checkersboard to measure progress.
 
 ---
 
