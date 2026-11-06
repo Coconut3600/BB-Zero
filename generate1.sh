@@ -1,54 +1,74 @@
 #!/usr/bin/env bash
+# ================================================================
+# GENERATE7.SH — BB-ZERO TRAINING PIPELINE (brain105 only)
+# ================================================================
+
 set -euo pipefail
 
 PROJECT_DIR="/mnt/c/python"
-PYFILE="brain1.py"
-
-WORKERS=14
-SIMS=40
-GAMES_PER_WORKER=4
-LOOPS=179   # 56 × 179 ≈ 10,000 partidas
-
 cd "$PROJECT_DIR"
 
-CYCLE=1
+# Self-play configuration
+WORKERS=10
+SIMS=800
+GAMES_PER_WORKER=10     # 10 × 10 = 100 new games per cycle
 
-while true; do
+TOTAL_CYCLES=100000
+
+for ((CYCLE=1; CYCLE<=TOTAL_CYCLES; CYCLE++)); do
     START=$(date +%s)
 
-    echo "=============================================="
-    echo "[CICLO $CYCLE] Generando ~10,000 partidas..."
-    echo "=============================================="
+    echo "=============================================================="
+    echo "[CYCLE $CYCLE / $TOTAL_CYCLES] BB-ZERO hybrid training"
+    echo "=============================================================="
 
-    for ((i=1; i<=LOOPS; i++)); do
-        echo "[CICLO $CYCLE] [LOOP $i/$LOOPS] Ejecutando $WORKERS workers..."
-        python3 "$PYFILE" $WORKERS $SIMS $GAMES_PER_WORKER
+    # ------------------------------------------------------------
+    # 1. SELF-PLAY (~100 new games)
+    # ------------------------------------------------------------
+    echo "[CYCLE $CYCLE] Generating ~100 new games... (time: $(date +"%H:%M:%S"))"
+    python3 brain105.py $WORKERS $SIMS $GAMES_PER_WORKER
+
+    # ------------------------------------------------------------
+    # 2. NETWORK BACKUP
+    # ------------------------------------------------------------
+    TIMESTAMP=$(date +"%Y_%m_%d_%H_%M_%S")
+    if [ -f /mnt/c/bb/la_marioneta.h5 ]; then
+        cp /mnt/c/bb/la_marioneta.h5 la_marioneta_$TIMESTAMP.h5
+        echo "[CYCLE $CYCLE] Backup created: la_marioneta_$TIMESTAMP.h5" | tee -a training.txt
+    else
+        echo "[CYCLE $CYCLE] WARNING: la_marioneta.h5 not found for backup" | tee -a training.txt
+    fi
+
+    # ------------------------------------------------------------
+    # 3. PHASE A — 25 TRAINING PASSES
+    # ------------------------------------------------------------
+    for ((I=1; I<=25; I++)); do
+        echo "[A:$I/25] Training brain105 (-4)... (time: $(date +"%H:%M:%S"))"
+        python3 brain105.py -4
     done
 
-    echo "[CICLO $CYCLE] Entrenando..."
+    # ------------------------------------------------------------
+    # 4. LOGGED TRAINING PASS (one log per cycle)
+    # ------------------------------------------------------------
+    echo "[LOG] Cycle training pass... (time: $(date +"%H:%M:%S"))" | tee -a training.txt
+    python3 brain105.py -4 | tee -a training.txt
 
-    # Fecha actual
-    FECHA=$(date '+%Y-%m-%d %H:%M:%S')
-
-    # Encabezado en training.txt
-    echo "===== CICLO $CYCLE | $FECHA =====" >> training.txt
-
-    # Entrenamiento (append)
-    python3 "$PYFILE" 0 | tee -a training.txt
-
-    # Calcular duración del ciclo
+    # ------------------------------------------------------------
+    # 5. CYCLE DURATION LOG
+    # ------------------------------------------------------------
     END=$(date +%s)
-    DURACION=$((END - START))
-    H=$((DURACION / 3600))
-    M=$(((DURACION % 3600) / 60))
-    S=$((DURACION % 60))
+    DURATION=$((END - START))
+    H=$((DURATION / 3600))
+    M=$(((DURATION % 3600) / 60))
+    S=$((DURATION % 60))
 
-    echo "Duración del ciclo: ${H}h ${M}m ${S}s" >> training.txt
-    echo "" >> training.txt
+    echo "[CYCLE $CYCLE] COMPLETED at $(date +"%H:%M:%S"). Duration: ${H}h ${M}m ${S}s" | tee -a training.txt
+    echo "" | tee -a training.txt
 
-    echo "[CICLO $CYCLE] COMPLETADO. Duración: ${H}h ${M}m ${S}s"
-    echo "Esperando 5 segundos antes del siguiente ciclo..."
+    echo "[CYCLE $CYCLE] Waiting 5 seconds before next cycle..."
     sleep 5
-
-    CYCLE=$((CYCLE + 1))
 done
+
+echo "=============================================================="
+echo "ALL $TOTAL_CYCLES COMPLETED."
+echo "=============================================================="
