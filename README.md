@@ -13,13 +13,13 @@ The project is estimated to be completed around **January 2027**.
 
 ## Current Status
 
-During early 2026, I continued refining and validating the full BB‑Zero training pipeline. In June, I resolved two silent but critical issues affecting self‑play quality: a faulty shuffle operation that misaligned training examples, and legacy N/W/Q statistics still being read from an older engine instead of the new structure. Both issues were fully fixed on June 18.
+During 2026, I continued refining and validating the BB‑Zero training pipeline. Earlier in the year, I fixed several issues affecting self‑play data generation and training consistency, resulting in cleaner datasets and more stable learning behavior. 
 
-With these corrections in place, BB‑Zero now produces clean self‑play data, consistent policy targets, and stable training behavior. Training will continue from the current point (approximately 30,000 self‑play games), now using a 50,000‑game sliding window and 800 simulations per move. Due to limited computational resources and the engine’s current slow learning rate, this long‑term schedule will run for roughly six months — until January 2027 — to accumulate the volume of games required for meaningful improvement.
+On November 1, 2026, I completed a major update to BB‑Zero's policy representation. The network output was expanded to a 1024‑action policy space, allowing the engine to represent the complete action space directly. Several legacy functions from earlier versions of the engine were removed during this transition. 
 
-In parallel, I have developed a structure similar to AlphaZero’s persistent tree but significantly faster and more memory‑efficient, and it is now fully integrated into the engine.
+BB‑Zero now applies legal‑move masking over the full 1024‑action policy, ensuring that policy inference, MCTS, and training all use the same action representation. The training pipeline can also use either an unlimited training window or a bounded window of up to two million self‑play games. In parallel, I developed and integrated a search structure inspired by AlphaZero's persistent tree architecture while remaining significantly faster and more memory‑efficient in practice. 
 
-Once the new network reaches sufficient strength, I will run evaluation matches against Matilde from Checkersboard to measure progress.
+Training will continue throughout November, December, and January using approximately 800 simulations per move to accumulate additional self‑play data and evaluate the impact of these architectural improvements. Once the new network reaches sufficient strength, I plan to run evaluation matches against Matilde from Checkersboard to measure progress and establish a performance benchmark.
 
 ---
 
