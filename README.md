@@ -1,10 +1,10 @@
 ## BB‑Zero — Project Overview
 
-BB‑Zero is an AlphaZero‑style engine for Spanish checkers, using PUCT, Monte Carlo Tree Search, Dirichlet noise, temperature, and pure self‑play reinforcement learning with no heuristics. The first full version of the program was completed on January 16, 2026. The next phase now begins: generating all training datasets from scratch and documenting the entire process as the project evolves.
+BB‑Zero is an AlphaZero‑style engine for Spanish checkers, using PUCT, Monte Carlo Tree Search, Dirichlet noise, temperature, and pure self‑play reinforcement learning with no heuristics. The first full prototype was completed on January 16, 2026, and after months of optimization, the engine is now complete and entering large‑scale training.
 
-The engine is written 100% in Python as a single .py file and is compatible with both Linux and Windows. BB‑Zero includes three integrated modes: Play Mode, Dataset Creation Mode, and Training Mode.
+Originally written 100% in Python, BB‑Zero has evolved into a **hybrid Python + C++ bitboard architecture**, significantly increasing speed while remaining compatible with both Linux and Windows. At its core, it features **my own invention**: a custom search structure that dramatically boosts speed and efficiency while using minimal RAM and CPU. This allows a standard gaming laptop to run hundreds of workers in parallel, each building its own persistent tree simultaneously—giving the engine tremendous power. BB‑Zero includes three integrated modes: Play Mode, Dataset Creation Mode, and Training Mode.
 
-My long‑term goal is clear: **to challenge and eventually defeat Profound**, one of the strongest Spanish checkers engines documented on **Herson P. Guier’s Spanish Checkers Programs** page:  
+My goal is clear: **to challenge and eventually defeat Profound** — widely considered the "Stockfish" of Spanish checkers — documented on **Herson P. Guier’s Spanish Checkers Programs** page:  
 https://damasclasicas.blogspot.com/
 
 The project is estimated to be completed around **January 2027**.
@@ -13,13 +13,20 @@ The project is estimated to be completed around **January 2027**.
 
 ## Current Status
 
-During 2026, I continued refining and validating the BB‑Zero training pipeline. Earlier in the year, I fixed several issues affecting self‑play data generation and training consistency, resulting in cleaner datasets and more stable learning behavior. 
+During 2026, I refined and debugged the entire BB‑Zero training pipeline. A critical breakthrough was identifying and fixing an incomplete sign‑inversion bug during player‑perspective board transformations that had previously stalled learning. Immediately after this fix, a short test run of just **25,000 self‑play games** achieved a draw against an expert‑level engine—a result that had been impossible even after 80,000 games prior to the fix.
 
-On November 1, 2026, I completed a major update to BB‑Zero's policy representation. The network output was expanded to a 1024‑action policy space, allowing the engine to represent the complete action space directly. Several legacy functions from earlier versions of the engine were removed during this transition. 
+On November 1, 2026, I also expanded the network output to a unified **1024‑action policy space** with strict legal‑move masking across inference, MCTS, and training, removing legacy code from earlier versions.
 
-BB‑Zero now applies legal‑move masking over the full 1024‑action policy, ensuring that policy inference, MCTS, and training all use the same action representation. The training pipeline can also use either an unlimited training window or a bounded window of up to two million self‑play games. In parallel, I developed and integrated a search structure inspired by AlphaZero's persistent tree architecture while remaining significantly faster and more memory‑efficient in practice. 
+Thanks to the speed and memory efficiency of the new C++ bitboard core and custom search architecture, the engine now scales from 4–8 workers up to **512–1,024 simultaneous workers** on an RTX 4060 (16 GB RAM) while keeping memory low and stable. Because of this massive speedup, what previously required months can now be completed in **a couple of weeks**.
 
-Training will continue throughout November, December, and January using approximately 800 simulations per move to accumulate additional self‑play data and evaluate the impact of these architectural improvements. Once the new network reaches sufficient strength, I plan to run evaluation matches against Matilde from Checkersboard to measure progress and establish a performance benchmark.
+### Training Plan (Starting This Sunday)
+
+Full‑scale training begins **this Sunday** using a **200,000‑game sliding window** (automatically purging older games as new ones accumulate) and running **512 concurrent workers 24/7** to maintain optimal thermal stability:
+
+1. **Experiment 1 — Small Network (~7 MB, *La Marioneta*):** Running non‑stop for **1 week** of pure self‑play to maximize game volume and validate scaling.
+2. **Experiment 2 — Large Network (~30 MB, *La MarionetaG*):** Pre‑trained on a database of classical Spanish checkers games played by top engines and grandmasters—converted via my custom **`txt2npz`** tool (adapted from *verifikator*)—followed by **2 weeks** of uninterrupted self‑play.
+
+Once training concludes, BB‑Zero will be tested in evaluation matches against expert engines (including *Matilde* from CheckerBoard) to determine if it is ready to face **Profound**.
 
 ---
 
@@ -33,7 +40,7 @@ https://www.youtube.com/watch?v=9LgB3CJ3WV4
 
 ## Release Plan
 
-Once training is completed, BB‑Zero will be released as a Windows executable (~180 MB) together with its neural network *La_Marioneta* (~15 MB), allowing anyone to play with it.
+Once training is completed, the source code for the **BB‑Zero GUI** and the **C++ bitboard engine** will be released so anyone can compile and play it, with the trained small neural network (*La_Marioneta*, ~7 MB) included.
 
 ---
 
