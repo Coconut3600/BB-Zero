@@ -21,7 +21,7 @@ Thanks to the speed and memory efficiency of the new C++ bitboard core and custo
 
 ### Training Plan (Starting This Sunday)
 
-Full‑scale training begins **this Sunday** using a **200,000‑game sliding window** (automatically purging older games as new ones accumulate) and running **512 concurrent workers 24/7** to maintain optimal thermal stability:
+Full‑scale training begins **this Sunday, November 22, 2026,** using a **200,000‑game sliding window** (automatically purging older games as new ones accumulate) and running **512 concurrent workers 24/7** to maintain optimal thermal stability:
 
 1. **Experiment 1 — Small Network (~7 MB, *La Marioneta*):** Running non‑stop for **1 week** of pure self‑play to maximize game volume and validate scaling.
 2. **Experiment 2 — Large Network (~30 MB, *La MarionetaG*):** Pre‑trained on a database of classical Spanish checkers games played by top engines and grandmasters—converted via my custom **`txt2npz`** tool (adapted from *verifikator*)—followed by **2 weeks** of uninterrupted self‑play.
