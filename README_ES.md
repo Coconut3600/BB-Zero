@@ -1,25 +1,32 @@
 ## BB‑Zero — Descripción General del Proyecto
 
-BB‑Zero es un motor estilo AlphaZero para damas españolas, utilizando PUCT, Monte Carlo Tree Search, ruido Dirichlet, temperatura y autoentrenamiento puro sin heurísticas. La primera versión completa del programa se terminó el 16 de enero de 2026. La siguiente fase comienza ahora: generar todos los conjuntos de datos de entrenamiento desde cero y documentar todo el proceso conforme el proyecto avanza.
+BB‑Zero es un motor estilo AlphaZero para damas españolas, que utiliza PUCT, Monte Carlo Tree Search (MCTS), ruido Dirichlet, temperatura y autoentrenamiento puro (*self‑play*) sin heurísticas. El primer prototipo completo del programa se terminó el 16 de enero de 2026 y, tras meses de optimización, el motor ya está finalizado y entrando en la fase de entrenamiento a gran escala.
 
-El motor está escrito 100% en Python dentro de un solo archivo .py y es compatible con Linux y Windows. BB‑Zero incluye tres modos integrados: Modo de Juego, Modo de Creación de Datasets y Modo de Entrenamiento.
+Escrito originalmente al 100 % en Python, BB‑Zero ha evolucionado hacia una **arquitectura híbrida en Python + bitboards en C++**, aumentando drásticamente su velocidad y manteniendo la compatibilidad tanto con Linux como con Windows. En su núcleo incorpora **mi propia invención**: una estructura de búsqueda personalizada que incrementa de forma extraordinaria la velocidad y la eficiencia con un consumo mínimo de RAM y CPU. Esto permite que una laptop *gamer* estándar ejecute cientos de *workers* en paralelo, cada uno construyendo su propio árbol persistente de manera simultánea, lo que dota al motor de una enorme potencia. BB‑Zero incluye tres modos integrados: Modo de Juego, Modo de Creación de Datasets y Modo de Entrenamiento.
 
 Mi objetivo a largo plazo es claro: **desafiar y eventualmente derrotar a Profound**, uno de los motores más fuertes de damas españolas documentado en la página **Programas de Damas Clásicas de Herson P. Guier**:  
 https://damasclasicas.blogspot.com/
 
-Se estima que el proyecto estará terminado alrededor de **enero de 2026**.
+Se estima que el proyecto estará terminado alrededor de **enero de 2027**.
 
 ---
 
 ## Estado Actual
 
-Durante 2026, continué refinando y validando la canalización de entrenamiento de BB‑Zero. A principios de año, corregí varios problemas que afectaban la generación de datos de self‑play y la consistencia del entrenamiento, lo que resultó en conjuntos de datos más limpios y un comportamiento de aprendizaje más estable. 
+Durante 2026, continué refinando y depurando toda la canalización de entrenamiento de BB‑Zero. Un avance decisivo fue identificar y corregir un error incompleto de inversión de signos durante las transformaciones del tablero según la perspectiva del jugador, el cual había estancado el aprendizaje anteriormente. Inmediatamente después de esta corrección, una prueba corta de apenas **25,000 partidas de self‑play** logró empatar contra un motor de nivel experto, un resultado que había sido imposible incluso tras 80,000 partidas antes de corregir el error.
 
-El 1 de noviembre de 2026 completé una actualización importante en la representación de políticas de BB‑Zero. La salida de la red fue ampliada a un espacio de políticas de 1024 acciones, permitiendo al motor representar directamente el espacio completo de acciones. Durante esta transición también se identificaron y eliminaron varias funciones heredadas de versiones anteriores del motor. 
+El 1 de noviembre de 2026 también completé una actualización importante en la representación de políticas de BB‑Zero. La salida de la red fue ampliada a un espacio unificado de **1024 acciones de política** con enmascaramiento estricto de movimientos legales en la inferencia, el MCTS y el entrenamiento, eliminando código heredado de versiones anteriores del motor.
 
-BB‑Zero ahora aplica una máscara de movimientos legales sobre la política completa de 1024 acciones, garantizando que la inferencia de la política, el MCTS y el entrenamiento utilicen la misma representación de acciones. Además, la canalización de entrenamiento puede utilizar tanto una ventana de entrenamiento ilimitada como una ventana limitada de hasta dos millones de partidas de self‑play. En paralelo, desarrollé e integré una estructura de búsqueda inspirada en el árbol persistente de AlphaZero, manteniendo un rendimiento significativamente más rápido y un uso de memoria más eficiente en la práctica. 
+Gracias a la velocidad y eficiencia en memoria del nuevo núcleo de bitboards en C++ y de la estructura de búsqueda personalizada, el motor escala ahora de 4–8 *workers* hasta **512–1,024 *workers* simultáneos** en una RTX 4060 (16 GB de RAM), manteniendo el consumo de memoria bajo y estable. Debido a esta enorme aceleración, lo que antes requería meses ahora puede completarse en **un par de semanas**.
 
-El entrenamiento continuará durante noviembre, diciembre y enero utilizando aproximadamente 800 simulaciones por movimiento para acumular más datos de self‑play y evaluar el impacto de estas mejoras arquitectónicas. Una vez que la nueva red alcance una fuerza suficiente, planeo realizar partidas de evaluación contra Matilde de Checkersboard para medir el progreso y establecer una referencia de rendimiento.
+### Plan de Entrenamiento (Comienza el Domingo 22 de Noviembre de 2026)
+
+El entrenamiento a gran escala comienza **este domingo 22 de noviembre de 2026** utilizando una **ventana deslizante de 200,000 partidas** (eliminando automáticamente las partidas más antiguas conforme se acumulan nuevas) y ejecutando **512 *workers* concurrentes las 24 horas del día** para mantener una estabilidad térmica óptima:
+
+1. **Experimento 1 — Red Pequeña (~7 MB, *La Marioneta*):** Ejecución ininterrumpida durante **1 semana** de autojuego puro para maximizar el volumen de partidas y validar el escalado.
+2. **Experimento 2 — Red Grande (~30 MB, *La MarionetaG*):** Preentrenada con una base de datos de partidas clásicas de damas españolas jugadas entre los mejores motores y grandes maestros —convertida mediante mi herramienta personalizada **`txt2npz`** (adaptada a partir de *verifikator*)—, seguida de **2 semanas** de autojuego continuo.
+
+Una vez concluido el entrenamiento, BB‑Zero será puesto a prueba en partidas de evaluación contra motores expertos (incluido *Matilde* de CheckersBoard) para medir su fuerza y determinar si está listo para enfrentarse a **Profound**.
 
 ---
 
@@ -34,7 +41,7 @@ https://www.youtube.com/watch?v=9LgB3CJ3WV4
 
 ## Plan de Publicación
 
-Una vez completado el entrenamiento, BB‑Zero se publicará como un ejecutable para Windows (~180 MB) junto con su red neuronal *La_Marioneta* (~15 MB), permitiendo que cualquiera pueda jugar con él.
+Una vez completado el entrenamiento, se liberará el código fuente de la **GUI de BB‑Zero** y del **motor de bitboards en C++** para que cualquier persona pueda compilarlo y jugarlo, incluyendo ya la red neuronal pequeña entrenada (*La_Marioneta*, ~7 MB).
 
 ---
 
