@@ -27,6 +27,7 @@ El entrenamiento a gran escala comienza **este domingo 22 de noviembre de 2026**
 2. **Experimento 2 — Red Grande (~30 MB, *La MarionetaG*):** Preentrenada con una base de datos de partidas clásicas de damas españolas jugadas entre los mejores motores y grandes maestros —convertida mediante mi herramienta personalizada **`txt2npz`** (adaptada a partir de *verifikator*)—, seguida de **2 semanas** de autojuego continuo.
 
 Una vez concluido el entrenamiento, BB‑Zero será puesto a prueba en partidas de evaluación contra motores expertos (incluido *Matilde* de CheckerBoard) para medir su fuerza y determinar si está listo para enfrentarse a **Profound**.
+
 ---
 
 ## Video de la GUI
