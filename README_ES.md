@@ -1,4 +1,3 @@
-## BB‑Zero — Descripción General del Proyecto
 ## BB‑Zero — Descripción del Proyecto
 
 BB‑Zero es un motor estilo AlphaZero para damas españolas, que utiliza PUCT, Monte Carlo Tree Search (MCTS), ruido Dirichlet, temperatura y autoentrenamiento puro (*self‑play*) sin heurísticas. El primer prototipo completo del programa se terminó el 16 de enero de 2026 y, tras meses de optimización, el motor ya está finalizado y entrando en la fase de entrenamiento a gran escala.
